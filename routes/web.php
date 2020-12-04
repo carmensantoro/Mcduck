@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +21,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+//Rotte per annunci
+Route::get('/ads/index', [AdController::class, 'index'])->name('ads.index');
+
+Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
+Route::post('/ads/store', [AdController::class, 'store'])->name('ads.store');
