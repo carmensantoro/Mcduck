@@ -17063,6 +17063,12 @@ readers do not read off random characters that represent icons */
   color: var(--third-color) !important;
 }
 
+.w-fit {
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+
 /*NAVBAR*/
 
 .btn-custom {
@@ -17190,5 +17196,13 @@ textarea {
 
 .custom-radio .custom-control-input:focus ~ .custom-control-label::before {
   box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(var(--second-color-rgb), 0.25);
+}
+
+.breadcrumb-section {
+  padding: 2.5rem 0rem;
+  text-align: center;
+  background-position: center center;
+  background-size: cover;
+  height: 150px;
 }
 

@@ -32,6 +32,10 @@
     color: var(--third-color) !important;
 }
 
+.w-fit {
+    width: fit-content!important;
+}
+
 /*NAVBAR*/
 .btn-custom {
     background: linear-gradient(to right,var(--first-color),#ff965d);
@@ -156,4 +160,13 @@ input, textarea{
 
 .custom-radio .custom-control-input:focus ~ .custom-control-label::before {
     box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(var(--second-color-rgb), 0.25);
+}
+
+// show ad
+.breadcrumb-section {
+    padding: 2.5rem 0rem;
+    text-align: center;
+    background-position: center center;
+    background-size: cover;
+    height: 150px;
 }
