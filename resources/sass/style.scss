@@ -80,6 +80,14 @@ header {
     background-repeat: no-repeat;
 }
 
+
+.bg-coin {
+    background-image: url('/media/header-coin.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
 .form-searchBorder {
     border: 2px solid var(--second-color);
 }

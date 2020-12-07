@@ -1,7 +1,7 @@
 <x-layout>
     
     <header>
-        <div class="container h-100">
+        <div class="container h-100  bg-coin">
             <div class="row align-items-center text-center h-100 pt-n5 header-align">
                 <div class="col-12 px-auto px-md-5">
                     {{-- Barra di ricerca --}}
@@ -24,7 +24,12 @@
         
         {{-- Categorie --}}
         <div class="container-home">
+
+
             <div class="row text-center">
+
+             
+
                 @foreach ($categories as $category)
                 
                 <div class="col-6 col-md-3">
