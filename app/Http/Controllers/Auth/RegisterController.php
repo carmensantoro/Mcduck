@@ -31,17 +31,18 @@ class RegisterController extends Controller
      * @var string
      */
     
-    public function redirectTo() {
-        $url = URL::previous();
-        if ($url == "/ads/create") {
-            return "/ads/create";
-        } else {
-            return RouteServiceProvider::HOME;
-        }
+    // public function redirectTo() {
+    //     $url = URL::previous();
+    //     dd($url);
+    //     if ($url == "/ads/create") {
+    //         return "/ads/create";
+    //     } else {
+    //         return RouteServiceProvider::HOME;
+    //     }
         
-    }
+    // }
 
-    //protected $redirectTo = "/ads/create";
+    protected $redirectTo = "/ads/create";
 
     /**
      * Create a new controller instance.
