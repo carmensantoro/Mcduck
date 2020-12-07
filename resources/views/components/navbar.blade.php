@@ -5,12 +5,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-            <a class="btn btn-newAd rounded-pill" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
-        </li>
-    </ul>
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
         <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link mx-md-3" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
@@ -18,9 +13,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('ads.index', ['category'=>'all'])}}">Tutti gli annunci</a>
             </li>
+        </ul>
+        
+        <ul class="navbar-nav">
             
-
-
             @guest
             @if (Route::has('login'))
             <li class="nav-item mx-md-3">
@@ -52,6 +48,11 @@
             </div>
         </li>
         @endguest
+        
+        <li class="nav-item">
+            <a class="btn btn-newAd rounded-pill" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
+        </li>
+        
     </ul>
 </div>
 </nav>
