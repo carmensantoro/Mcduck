@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-transparent">
-    <a class="navbar-brand ml-3" href="#">McDuck</a>
+    <a class="navbar-brand ml-5" href="{{route('home')}}">McDuck</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,10 +13,10 @@
     </ul>
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link mx-md-3" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link mx-md-3" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('ads.index')}}">Tutti gli annunci</a>
+                <a class="nav-link" href="{{route('ads.index', ['category'=>'all'])}}">Tutti gli annunci</a>
             </li>
             
 

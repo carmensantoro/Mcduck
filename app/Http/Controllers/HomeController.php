@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ad;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $ads = Ad::orderBy('created_at', 'desc')->take(5)->get();
+        return view('welcome', compact('ads'));
     }
 }

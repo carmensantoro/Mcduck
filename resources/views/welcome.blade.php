@@ -21,34 +21,48 @@
     </header>
     
     <main>
+        
         <div class="container-home">
+            
             <div class="row text-center">
+                
+                @foreach ($categories as $category)
+                
                 <div class="col-6 col-md-3">
-                    Nome categoria
+                    {{$category->name}}
                 </div>
-                <div class="col-6 col-md-3">
-                    Nome categoria
-                </div>
-                <div class="col-6 col-md-3">
-                    Nome categoria
-                </div>
-                <div class="col-6 col-md-3">
-                    Nome categoria
-                </div>
-                <div class="col-6 col-md-3">
-                    Nome categoria
-                </div>
-                <div class="col-6 col-md-3">
-                    Nome categoria
-                </div>
-                <div class="col-6 col-md-3">
-                    Nome categoria
-                </div>
-                <div class="col-6 col-md-3">
-                    Nome categoria
-                </div>
+                @endforeach
+                
             </div>
         </div>
-        
     </main>
+    
+    <section class="bg-white pt-5">
+        <div class="container">
+            <div class="row">
+                    @foreach ($ads as $ad)
+                    <div class="col-12">
+                        <a href="{{route('ads.show', compact('ad'))}}">
+                        <div class="card mb-3">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="https://via.placeholder.com/300x150.png" class="card-img img-fluid" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{$ad->title}}</h5>
+                                        <p class="card-text"><small class="text-muted">{{$ad->category()->get()->implode('name', ' ')}}</small></p>
+                                        <h3>{{$ad->price}} €</h3>
+                                        <p class="card-text">{{$ad->body}}</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    @endforeach
+                </div>
+                </div>
+    </section>
 </x-layout>

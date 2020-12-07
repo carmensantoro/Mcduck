@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,13 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //Rotte per annunci
-Route::get('/ads/index', [AdController::class, 'index'])->name('ads.index');
-
+// Lista annunci
+Route::get('/ads/index/{category}', [AdController::class, 'index'])->name('ads.index');
+// Creazione e salvataggio
 Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
 Route::post('/ads/store', [AdController::class, 'store'])->name('ads.store');
+// Dettaglio annuncio
+Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
+
+// Annunci filtrati per categoria
+// Route::get('ads/index/{category}', [AdController::class, 'index'])->name('adscategory.index');
