@@ -9,16 +9,25 @@
         <a class="position-absolute btn bg-danger" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+            <a class="btn btn-newAd rounded-pill" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
+        </li>
+    </ul>
+        <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link mx-md-3" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('ads.index', ['category'=>'all'])}}">Tutti gli annunci</a>
             </li>
+<<<<<<< HEAD
             <li class="nav-item d-md-none">
                 <a class="btn bg-danger" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
             </li>
+=======
+            
+>>>>>>> beaff1e9bb4f5e2bc1b7f10680d957e6363a0f1d
 
 
             @guest
@@ -29,7 +38,7 @@
             @endif
             
             @if (Route::has('register'))
-            <li class="nav-item ml-md-3 mr-md-5">
+            <li class="nav-item ml-md-3 mr-md-3">
                 <a class="nav-link btn-custom rounded-pill" href="{{ route('register') }}">{{ __('Register') }}</a>
             </li>
             @endif
