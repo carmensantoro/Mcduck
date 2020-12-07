@@ -26,7 +26,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="title_ad">Titolo</label>
-                    <input type="text" name="title" class="form-control" id="title_ad" aria-describedby="emailHelp">
+                <input type="text" name="title" value="{{old('title')}}" class="form-control" id="title_ad" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                     <label for="description_ad">Descrizione</label>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="form-group">
                     <label for="category">seleziona una categoria</label>
-                    <select class="form-control" name="category" id="category">
+                    <select class="form-control" name="category" id="category" valu>
                       @foreach ($categories as $category)
                         <option value="{{$category->id}}">{{$category->name}}</option>
                       @endforeach
@@ -42,7 +42,7 @@
                 </div>
                 <div class="form-group">
                     <label for="price">Prezzo</label>
-                    <input type="number" name="price" step='.01' value="0.00" class="form-control" id="price">
+                    <input type="number" name="price" step='.01' value="{{old('price') ?? 0.00}}" class="form-control" id="price">
                 </div>
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
