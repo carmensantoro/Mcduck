@@ -29,7 +29,7 @@
                 @foreach ($categories as $category)
                 
                 <div class="col-6 col-md-3">
-                    {{$category->name}}
+                <a href="{{route('ads.index', compact('category'))}}">{{$category->name}}</a>
                 </div>
                 @endforeach
                 

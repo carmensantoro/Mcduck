@@ -21,13 +21,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('ads.index', ['category'=>'all'])}}">Tutti gli annunci</a>
             </li>
-<<<<<<< HEAD
             <li class="nav-item d-md-none">
                 <a class="btn bg-danger" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
             </li>
-=======
-            
->>>>>>> beaff1e9bb4f5e2bc1b7f10680d957e6363a0f1d
 
 
             @guest
