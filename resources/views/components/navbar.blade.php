@@ -4,7 +4,10 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    
+
+    <div class="position-relative d-none d-md-block w-50">
+        <a class="position-absolute btn bg-danger" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
+    </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
@@ -13,7 +16,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('ads.index')}}">Tutti gli annunci</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item d-md-none">
                 <a class="btn bg-danger" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
             </li>
 
