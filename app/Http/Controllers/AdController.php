@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Ad;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreAd;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AdController extends Controller
 {
@@ -19,9 +21,20 @@ class AdController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category)
     {
-        $ads=Ad::all();
+        
+        $category = Category::find($category);
+        // $category = DB::table('categories')->where('name', $category)->get();
+        // $categoryid = DB::table('categories')->where('id', $category)->get();
+
+        if ($category != null) {
+            $ads = $category->ads()->get();
+        }
+        else {
+            $ads=Ad::all()->sortDesc();
+        }
+        
         return view('ads.index', compact('ads'));
     }
 
@@ -65,7 +78,7 @@ class AdController extends Controller
      */
     public function show(Ad $ad)
     {
-        //
+        return view('ads.show', compact('ad'));
     }
 
     /**

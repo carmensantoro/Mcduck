@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$ad->title}}</h5>
                             <p class="card-text">{{$ad->body}}</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <p class="card-text"><small class="text-muted">Creato il: {{$ad->created_at->format('d/m/Y')}}</small></p>
                         </div>
                     </div>
                 </div>

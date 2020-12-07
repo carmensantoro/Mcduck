@@ -21,7 +21,7 @@ class CreateCategoriesTable extends Migration
         });
 
         $categories = [
-            'Motori', 'Infomratica', 'Elettrodomestici', 'Libri', 'Giochi', 
+            'Motori', 'Informatica', 'Elettrodomestici', 'Libri', 'Giochi', 
             'Sport', 'Immobili', 'Telefoni', 'Arredamento', 'Elettronica',
         ];
 
