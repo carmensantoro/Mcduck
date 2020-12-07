@@ -13,6 +13,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('ads.index')}}">Tutti gli annunci</a>
             </li>
+            <li class="nav-item">
+                <a class="btn bg-danger" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
+            </li>
 
 
             @guest

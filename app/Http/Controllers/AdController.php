@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class AdController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +21,8 @@ class AdController extends Controller
      */
     public function index()
     {
-        return view('ads.index');
+        $ads=Ad::all();
+        return view('ads.index', compact('ads'));
     }
 
     /**
@@ -42,7 +48,8 @@ class AdController extends Controller
             [
                 'title'=>$request->title,
                 'body'=>$request->body,
-                'price'=>$request->price
+                'price'=>$request->price,
+                'category_id'=>$request->category
             ]
         );
 

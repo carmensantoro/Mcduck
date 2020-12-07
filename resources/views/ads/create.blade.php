@@ -33,6 +33,14 @@
                     <textarea name="body" id="description_ad" class="form-control" rows="10">{{old('body')}}</textarea>
                 </div>
                 <div class="form-group">
+                    <label for="category">seleziona una categoria</label>
+                    <select class="form-control" name="category" id="category">
+                      @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                      @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="price">Prezzo</label>
                     <input type="number" name="price" step='.01' value="0.00" class="form-control" id="price">
                 </div>
