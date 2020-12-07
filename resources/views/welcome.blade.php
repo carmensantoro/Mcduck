@@ -27,9 +27,9 @@
             <div class="row text-center">
                 @foreach ($categories as $category)
                 
-                <div class="col-6 col-md-3">
-                    <div class="card my-3">
-                        <div class="card-body"> 
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="my-3 card-category">
+                        <div class="card-body font-weight-bold"> 
                             {{$category->name}}
                         </div>
                     </div>

@@ -93,14 +93,30 @@ header {
 .container-home {
     background: var(--third-color);
     margin-top: -10%;
-    margin-right: 20%;
-    margin-left: 20%;
+    margin-right: 15%;
+    margin-left: 15%;
     padding: 23px 20px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     box-shadow: 0 -12px 10px 0 rgba(var(--shadow));
 }
 
+/*Category*/
+.card-category {
+    position: relative;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 2px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.card-category:hover {
+    box-shadow: 0 0 10px 0px rgba(0,0,0,.12);
+    color: var(--second-color);
+}
 
 /*CARD*/
 .card {
