@@ -1,21 +1,24 @@
 
 <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-transparent">
-    <a class="navbar-brand ml-5" href="#">McDuck</a>
+    <a class="navbar-brand ml-3" href="#">McDuck</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+            <a class="btn btn-newAd rounded-pill" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
+        </li>
+    </ul>
+        <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link mx-md-3" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('ads.index')}}">Tutti gli annunci</a>
             </li>
-            <li class="nav-item">
-                <a class="btn bg-danger" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
-            </li>
+            
 
 
             @guest
@@ -26,7 +29,7 @@
             @endif
             
             @if (Route::has('register'))
-            <li class="nav-item ml-md-3 mr-md-5">
+            <li class="nav-item ml-md-3 mr-md-3">
                 <a class="nav-link btn-custom rounded-pill" href="{{ route('register') }}">{{ __('Register') }}</a>
             </li>
             @endif

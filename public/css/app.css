@@ -10907,30 +10907,35 @@ a.text-dark:focus {
   --first-color: #f9a840;
   --second-color: #fb6721;
   --third-color: #f8f8f8;
+  /*Ancora da decidere*/
+  --first-color-rgb: 249, 168, 64;
+  --second-color-rgb: 251, 103, 33;
+  /*--third-color-rgb:;  Ancora da decidere*/
+  --shadow: 42,47,54,.3;
 }
 
 .bg-first {
-  background-color: var(--first-color);
+  background-color: var(--first-color) !important;
 }
 
 .bg-second {
-  background-color: var(--second-color);
+  background-color: var(--second-color) !important;
 }
 
 .bg-third {
-  background-color: var(--third-color);
+  background-color: var(--third-color) !important;
 }
 
 .text-first {
-  color: var(--first-color);
+  color: var(--first-color) !important;
 }
 
 .text-second {
-  color: var(--second-color);
+  color: var(--second-color) !important;
 }
 
 .text-third {
-  color: var(--third-color);
+  color: var(--third-color) !important;
 }
 
 /*NAVBAR*/
@@ -10948,6 +10953,23 @@ a.text-dark:focus {
 
 .btn-custom:hover {
   box-shadow: 0 0 10px #f6944a;
+}
+
+.btn-newAd {
+  color: var(--first-color) !important;
+  font-weight: bold;
+  padding: 12px 20px 12px 20px;
+  letter-spacing: 1px;
+  line-height: 15px;
+  border: 2px solid var(--first-color);
+  background: transparent;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-newAd:hover {
+  color: var(--third-color) !important;
+  background: var(--second-color);
+  border: 2px solid var(--second-color);
 }
 
 /*HEADER*/
@@ -10982,6 +11004,66 @@ header {
   padding: 23px 20px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
-  box-shadow: 0 -12px 10px 0 rgba(42, 47, 54, 0.3);
+  box-shadow: 0 -12px 10px 0 rgba(var(--shadow));
+}
+
+/*CARD*/
+
+.card {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.card-header {
+  background: linear-gradient(to right, rgba(var(--first-color-rgb), 0.3), rgba(var(--second-color-rgb), 0.3));
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+}
+
+.form-control {
+  border: 1px solid rgba(var(--first-color-rgb), 0.7) !important;
+}
+
+.form-control:valid {
+  background-color: rgba(var(--second-color-rgb), 0.2) !important;
+}
+
+/*Colore background quando si autofilla il campo*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgba(var(--first-color-rgb), 0.4) inset !important;
+}
+
+input,
+textarea {
+  background-color: rgba(var(--second-color-rgb), 0.1) !important;
+}
+
+/*Check radio*/
+
+.custom-control-label::before {
+  background-color: rgba(var(--second-color-rgb), 0.3);
+}
+
+.custom-radio .custom-control-input:checked ~ .custom-control-label::before,
+.custom-radio .custom-control-input:checked ~ .custom-control-label::after {
+  background-color: var(--first-color);
+  /* È l'immagine del pallino bianco dentro il bottone radio */
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23fff'/%3E%3C/svg%3E");
+  border-radius: 50% !important;
+}
+
+.custom-radio .custom-control-input:active ~ .custom-control-label::before {
+  color: #fff;
+  background-color: var(--first-color);
+}
+
+.custom-radio .custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(var(--second-color-rgb), 0.25);
 }
 
