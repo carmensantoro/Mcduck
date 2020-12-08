@@ -36,6 +36,15 @@
     width: fit-content!important;
 }
 
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: var(--second-color) !important;
+}
+
 /*NAVBAR*/
 .btn-custom {
     background: linear-gradient(to right,var(--first-color),#ff965d);
@@ -113,6 +122,15 @@ header {
     box-shadow: 0 -12px 10px 0 rgba(var(--shadow));
 }
 
+@media screen and (max-width:575px) {
+    .container-home {
+        margin-top: -20%;
+        margin-right: 5%;
+        margin-left: 5%;
+        font-size: 13px;
+    }
+}
+
 /*Category*/
 .card-category {
     position: relative;
@@ -124,10 +142,12 @@ header {
     background-position: center center;
 }
 
-
 .card-category:hover {
     box-shadow: 0 0 10px 0px rgba(0,0,0,.12);
-    color: var(--second-color);
+}
+
+.card-category:hover a {
+    color: var(--second-color) !important;
 }
 
 /*CARD*/
@@ -193,4 +213,47 @@ input, textarea{
     background-position: center center;
     background-size: cover;
     height: 150px;
+}
+
+
+
+
+
+/*FOOTER*/
+
+footer {
+    background-color: var(--third-color);
+}
+
+/*Icone social*/
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    width: 56px;
+    background-color: var(--first-color);
+    border-radius: 100%;
+    font-size: 24px;
+    margin-right: 24px;
+}
+
+.social-icons .social-icon .fas:hover, 
+.social-icons .social-icon .fab:hover {
+    color: var(--third-color) !important;
+}
+
+.social-icons .social-icon:last-child {
+    margin-right: 0;
+}
+
+.social-icons .social-icon:hover {
+    background-color: var(--second-color) !important;
+    color: var(--third-color) !important;
+}
+
+.copyright-footer:hover,
+.link-footer:hover {
+    color: var(--third-color) !important;
 }

@@ -7,15 +7,17 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
+    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link mx-md-3" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('ads.index', ['category'=>'all'])}}">Tutti gli annunci</a>
             </li>
-            
+        </ul>
+
+        <ul class="navbar-nav">
             @guest
             @if (Route::has('login'))
             <li class="nav-item mx-md-3">
@@ -24,7 +26,7 @@
             @endif
             
             @if (Route::has('register'))
-            <li class="nav-item ml-md-3 mr-md-3">
+            <li class="nav-item mx-md-3">
                 <a class="nav-link btn-custom rounded-pill" href="{{ route('register') }}">{{ __('Register') }}</a>
             </li>
             @endif
@@ -47,10 +49,9 @@
             </li>
             @endguest
             
-            <li class="nav-item">
+            <li class="nav-item mr-md-3">
                 <a class="btn btn-newAd rounded-pill" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
-            </li>
-            
+            </li> 
         </ul>
     </div>
 </nav>

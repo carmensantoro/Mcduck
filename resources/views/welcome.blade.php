@@ -20,7 +20,7 @@
         </div>
     </header>
     
-    <main>
+    <main class="bg-white">
         
         {{-- Categorie --}}
         <div class="container-home">
