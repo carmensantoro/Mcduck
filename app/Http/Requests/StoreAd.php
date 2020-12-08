@@ -29,4 +29,17 @@ class StoreAd extends FormRequest
             'price'=>'required|numeric|min:0.01'
         ];
     }
+
+    public function messages(){
+        return [
+            'title.required'=>'Il titolo è richiesto',
+            'title.max'=>'Troppi caratteri nel titolo',
+            'body.required'=>'La descrizione è richiesta',
+            'body.max'=>'Troppi caratteri nella descrizione',
+            'body.min'=>'Scrivi di più',
+            'price.required'=>'Devi mettere un prezzo',
+            'price.numeric'=>'devi mettere un numero',
+            'price.min'=>'il prezzo minimo è 0,01'
+        ];
+    }
 }
