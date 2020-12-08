@@ -1,13 +1,13 @@
 <x-layout>
     
     <header>
-        <div class="container h-100  bg-coin">
+        <div class="container-fluid h-100 bg-coin">
             <div class="row align-items-center text-center h-100 pt-n5 header-align">
                 <div class="col-12 px-auto px-md-5">
                     {{-- Barra di ricerca --}}
                     <div class="row no-gutters mt-3 align-items-center justify-content-center">
-                        <div class="col-10 col-sm-11 col-md-9 col-lg-5">
-                            <input class="form-control form-control-lg form-searchBorder rounded-pill pr-5" type="search" placeholder="Cerca ciò che desideri">
+                        <div class="col-12 col-sm-11 col-md-9 col-lg-5">
+                            <input class="form-control form-control-lg form-searchBorder rounded-pill shadow pr-5" type="search" placeholder="Cerca ciò che desideri">
                         </div>
                         <div class="col-auto">
                             <button class="btn btn-searchColor border-0 rounded-pill ml-n5" type="button">

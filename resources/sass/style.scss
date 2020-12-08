@@ -20,6 +20,14 @@
     background-color: var(--third-color) !important;
 }
 
+.bg-footer{
+    background-color: #1a1a1a;
+}
+
+.bg-copyright {
+    background-color: black;
+}
+
 .text-first {
     color: var(--first-color) !important;
 }
@@ -82,7 +90,7 @@ a:hover {
 
 /*HEADER*/
 header {
-    background: url('/media/header.png');
+    background: linear-gradient(transparent, white 80%), url('/media/header.png');
     height: 100vh;
     background-size: cover;
     background-position: top left;
@@ -95,6 +103,12 @@ header {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
+}
+
+@media screen and (max-width:575px) {
+    .bg-coin {
+        background-size: cover;
+    }
 }
 
 .form-searchBorder {
@@ -112,7 +126,7 @@ header {
 }
 
 .container-home {
-    background: var(--third-color);
+    background: linear-gradient(var(--third-color), white 95%);
     margin-top: -10%;
     margin-right: 15%;
     margin-left: 15%;
@@ -165,11 +179,11 @@ header {
 }
 
 .form-control{
-    border: 1px solid rgba(var(--first-color-rgb),0.7) !important;
+    border: 1px solid rgba(var(--second-color-rgb),0.7) !important;
 }
 
 .form-control:valid {
-    background-color:rgba(var(--second-color-rgb),0.2) !important;
+    background-color:rgba(var(--first-color-rgb),0.8) !important;
 }
 
 /*Colore background quando si autofilla il campo*/
@@ -250,10 +264,5 @@ footer {
 
 .social-icons .social-icon:hover {
     background-color: var(--second-color) !important;
-    color: var(--third-color) !important;
-}
-
-.copyright-footer:hover,
-.link-footer:hover {
     color: var(--third-color) !important;
 }
