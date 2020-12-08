@@ -26,7 +26,7 @@
             @endif
             
             @if (Route::has('register'))
-            <li class="nav-item mx-md-3">
+            <li class="nav-item mx-md-3 my-2 my-lg-0">
                 <a class="nav-link btn-custom rounded-pill" href="{{ route('register') }}">{{ __('Register') }}</a>
             </li>
             @endif
@@ -49,7 +49,7 @@
             </li>
             @endguest
             
-            <li class="nav-item mr-md-3">
+            <li class="nav-item mr-md-3 my-2 my-lg-0">
                 <a class="btn btn-newAd rounded-pill" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
             </li> 
         </ul>

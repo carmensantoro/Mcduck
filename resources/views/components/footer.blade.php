@@ -1,5 +1,5 @@
-<footer class="pt-5 mt-5">
-    <div class="row mx-auto bg-footer text-white">
+<footer class="mt-5">
+    <div class="row mx-auto bg-footer text-white pt-5">
         
         
         {{-- Prima colonna --}}

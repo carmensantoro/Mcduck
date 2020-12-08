@@ -20,18 +20,13 @@
         </div>
     </header>
     
-    <main class="bg-white">
+    <main>
         
         {{-- Categorie --}}
         <div class="container-home">
-
-
             <div class="row text-center">
-
-             
-
-                @foreach ($categories as $category)
                 
+                @foreach ($categories as $category)                
                 <div class="col-6 col-md-4 col-lg-3">
                     <div class="my-3 card-category">
                         <div class="card-body font-weight-bold"> 
@@ -39,8 +34,8 @@
                         </div>
                     </div>
                 </div>
-                
                 @endforeach
+                
             </div>
         </div>
         

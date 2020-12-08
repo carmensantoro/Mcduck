@@ -1,22 +1,25 @@
 <x-layout>
-
+    
+    <main>
     <div class="container-home mt-5">
-            
         <div class="row text-center">
             
-            @foreach ($categories as $category)
-            
-            <div class="col-6 col-md-3">
-            <a href="{{route('ads.index', compact('category'))}}">{{$category->name}}</a>
+            @foreach ($categories as $category)            
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="my-3 card-category">
+                    <div class="card-body font-weight-bold"> 
+                        <a href="{{route('ads.index', compact('category'))}}">{{$category->name}}</a>
+                    </div>
+                </div>
             </div>
             @endforeach
             
         </div>
     </div>
-
+    
     <div class="container my-5">
         <div class="row">
-
+            
             @foreach ($ads as $ad)
             <div class="col-12 col-md-6">
                 <a href="{{route('ads.show', compact('ad'))}}">
@@ -37,7 +40,7 @@
                         </div>
                     </div>
                 </a>
-        </div>
+            </div>
             @endforeach  
         </div>
     </div>
