@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card border-0 shadow">
-                <div class="card-header pl-5 font-weight-bold">{{ __('Login') }}</div>
+                <div class="card-header font-weight-bold">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
