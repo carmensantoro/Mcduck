@@ -51,7 +51,7 @@
                     @foreach ($ads as $ad)
                     <div class="col-12">
                         <a href="{{route('ads.show', compact('ad'))}}">
-                            <div class="card mb-3">
+                            <div class="card mb-3 overflow-hidden">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
                                         <img src="https://via.placeholder.com/300x150.png" class="card-img img-fluid" alt="...">
