@@ -37,6 +37,8 @@ Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
 // Annunci filtrati per categoria
 // Route::get('ads/index/{category}', [AdController::class, 'index'])->name('adscategory.index');
 
+// Rotta ricerca libera
+Route::get('/search', [AdController::class, 'search'])->name('ads.search');
 //rotte per revisore
 Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
 Route::post('revisor/ad/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
