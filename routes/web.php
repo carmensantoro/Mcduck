@@ -38,4 +38,7 @@ Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
 // Route::get('ads/index/{category}', [AdController::class, 'index'])->name('adscategory.index');
 
 //rotte per revisore
-Route::get('/revisor/index', [RevisorController::class, 'index']);
+Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
+Route::post('revisor/ad/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
+Route::post('revisor/ad/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');
+
