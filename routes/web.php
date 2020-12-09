@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,6 @@ Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
 
 // Annunci filtrati per categoria
 // Route::get('ads/index/{category}', [AdController::class, 'index'])->name('adscategory.index');
+
+//rotte per revisore
+Route::get('/revisor/index', [RevisorController::class, 'index']);
