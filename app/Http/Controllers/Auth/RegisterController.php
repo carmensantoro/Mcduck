@@ -39,7 +39,6 @@ class RegisterController extends Controller
     //     } else {
     //         return RouteServiceProvider::HOME;
     //     }
-        
     // }
 
     protected $redirectTo = "/ads/create";

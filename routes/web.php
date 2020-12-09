@@ -35,3 +35,6 @@ Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
 
 // Annunci filtrati per categoria
 // Route::get('ads/index/{category}', [AdController::class, 'index'])->name('adscategory.index');
+
+// Rotta ricerca libera
+Route::get('/search', [AdController::class, 'search'])->name('ads.search');
