@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\RevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,5 @@ Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
 
 // Rotta ricerca libera
 Route::get('/search', [AdController::class, 'search'])->name('ads.search');
+//rotte per revisore
+Route::get('/revisor/index', [RevisorController::class, 'index']);

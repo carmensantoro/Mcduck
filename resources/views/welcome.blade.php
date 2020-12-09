@@ -1,6 +1,14 @@
 <x-layout>
     
     <header>
+
+        {{-- Errore di accesso revisore --}}
+        @if (session('access.denied.revisor.only'))
+            <div class="alert alert-danger">
+                Accesso non consentito - solo revisori
+            </div>
+        @endif
+
         <div class="container-fluid h-100 bg-coin">
             <div class="row align-items-center text-center h-100 pt-n5 header-align">
                 <div class="col-12 px-auto px-md-5">
@@ -23,7 +31,7 @@
     </header>
     
     <main>
-        
+
         {{-- Categorie --}}
         <div class="container-home">
             <div class="row text-center">
