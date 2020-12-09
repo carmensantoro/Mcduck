@@ -19,9 +19,9 @@
             @if(Auth::user()->is_revisor)
             <li class="nav-item">
                 <a href="{{ route('revisor.index')}}" class="nav-link">
-                    Revisor home
+                    Da revisionare
                     <span class="badge badge-pill badge-warning">{{
-                        \App\Ad::ToBeRevisionedCount()
+                        \App\Models\Ad::ToBeRevisionedCount()
                     }}</span>
                 </a>
             </li>
