@@ -26,7 +26,8 @@ class StoreAd extends FormRequest
         return [
             'title'=>'required|max:20',
             'body'=>'required|max:500|min:20',
-            'price'=>'required|numeric|min:0.01'
+            'price'=>'required|numeric|min:0.01',
+            'category_id'=>'required'
         ];
     }
 
@@ -38,8 +39,9 @@ class StoreAd extends FormRequest
             'body.max'=>'Troppi caratteri nella descrizione',
             'body.min'=>'Scrivi di più',
             'price.required'=>'Devi mettere un prezzo',
-            'price.numeric'=>'devi mettere un numero',
-            'price.min'=>'il prezzo minimo è 0,01'
+            'price.numeric'=>'Devi mettere un numero',
+            'price.min'=>'Il prezzo minimo è 0,01',
+            'category_id.required'=>'Devi selezionare una categoria',
         ];
     }
 }
