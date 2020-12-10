@@ -78,5 +78,19 @@
                 </div>
             </div>
         </section>
+
+
+        {{-- Annuncio per diventare revisore --}}
+        <div class="container-fluid bg-money p-5">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2>Vuoi collaborare con noi e guadagnare soldi?</h2>
+                    <h6>Diventa nostro revisore!</h6>
+                <a class="btn btn-custom rounded-pill" href="{{ route('revisor.formRequest') }}">Clicca qui</a>
+                </div>
+            </div>
+        </div>
+
+
     </main>
 </x-layout>

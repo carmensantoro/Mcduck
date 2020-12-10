@@ -43,5 +43,9 @@
             </div>
             @endforeach  
         </div>
+        <div class="row">
+        <div class="col-12 d-flex justify-content-end">{{$ads->links()}}</div>
+        </div>
     </div>
+
 </x-layout>

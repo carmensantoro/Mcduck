@@ -17265,6 +17265,15 @@ textarea {
   height: 150px;
 }
 
+/*Annuncio per diventare revisore*/
+
+.bg-money {
+  background: url("/media/euro.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 /*FOOTER*/
 
 footer {
