@@ -25,7 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $ads = Ad::orderBy('created_at', 'desc')->take(5)->get();
+        $ads = Ad::where('is_accepted', true)
+                ->orderBy('created_at', 'desc')
+                ->take(5)
+                ->get();
+
         return view('welcome', compact('ads'));
     }
 }

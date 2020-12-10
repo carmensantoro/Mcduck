@@ -32,10 +32,13 @@ class AdController extends Controller
         // $categoryid = DB::table('categories')->where('id', $category)->get();
         
         if ($category != null) {
-            $ads = $category->ads()->get();
+            $ads = $category->ads()
+                    ->orderBy('created_at', 'desc')
+                    ->where('is_accepted', true)
+                    ->get();
         }
         else {
-            $ads=Ad::all()->sortDesc();
+            $ads=Ad::orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(10);
         }
         
         return view('ads.index', compact('ads'));
