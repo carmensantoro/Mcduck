@@ -47,7 +47,7 @@ class AdController extends Controller
     public function search(Request $request) {
         $q = $request->input('q');
         $ads = Ad::search($q)->get();
-      /*   dd($ads); */
+    //   dd($ads); 
         return view ('ads.search', compact('q', 'ads'));
     }
     

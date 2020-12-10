@@ -1,13 +1,24 @@
 <x-layout>
     
     <main>
-    <div class="container-home mt-5">
-        <div class="row text-center">
-                        
-            <div class="col-8 col-md-6 col-lg-6">
-                <div class="my-3 card-category">
-                    <h1>Risultati per ricerca: {{$q}}</h1>
-                </div>
+    <div class="container mt-5">
+        <div class="row align-items-center">    
+            <div class="col-12 col-md-8 col-lg-8">
+                <form action="{{route('ads.search')}}" method="get" class="d-flex w-auto mr-5 pr-5">
+                    
+                        <input class="form-control form-control-lg form-searchBorder rounded-pill shadow pr-5" type="text" name="q" placeholder="Risultati per ricerca: {{$q}}">
+                        <button class="btn btn-searchColor border-0 rounded-pill ml-n5" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    
+            </form>
+            </div>
+                    
+
+
+
+            <div class="col-12 col-md-4 col-lg-4">
+                    Ordina per:
             </div>
             
         </div>
@@ -30,7 +41,6 @@
                                     <p class="card-text"><small class="text-muted">{{$ad->category()->get()->implode('name', ' ')}}</small></p>
                                     <p class="card-text">{{$ad->body}}</p>
                                     <h5 class="text-right">{{$ad->price}} €</h5>
-                                    
                                 </div>
                             </div>
                         </div>
