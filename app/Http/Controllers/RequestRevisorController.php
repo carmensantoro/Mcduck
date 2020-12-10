@@ -21,8 +21,9 @@ class RequestRevisorController extends Controller
 
     
     public function request(Request $request){
-        $request_revisor = Auth::user();
-        //$motivation = $request->imput('');
+        $user = Auth::user();
+        // $motivation = $request->input('motivation_revisor');
+        // $request_revisor =
        
 
         //$contact->save();

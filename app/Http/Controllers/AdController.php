@@ -35,7 +35,7 @@ class AdController extends Controller
             $ads = $category->ads()
                     ->orderBy('created_at', 'desc')
                     ->where('is_accepted', true)
-                    ->get();
+                    ->paginate(10);
         }
         else {
             $ads=Ad::orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(10);
