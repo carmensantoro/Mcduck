@@ -24,6 +24,7 @@ class RevisorRequest extends Mailable
         $this->request_revisor = $request_revisor;
     }
 
+    
     /**
      * Build the message.
      *

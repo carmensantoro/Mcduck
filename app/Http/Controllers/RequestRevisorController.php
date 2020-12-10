@@ -21,14 +21,11 @@ class RequestRevisorController extends Controller
 
     
     public function request(Request $request){
-        $user = Auth::user();
-        // $motivation = $request->input('motivation_revisor');
-        // $request_revisor =
+        $name = Auth::user()->name;
+        $email = Auth::user()->email;
+        $motivation = $request->input('motivation_revisor');
+        $request_revisor = compact('name', 'email', 'motivation');
        
-
-        //$contact->save();
-
-        //$contact = compact('name', 'surname', 'description', 'mail');
 
         Mail::to('caronte@averno.com')->send(new RevisorRequest($request_revisor));
 
