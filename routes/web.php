@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\RequestRevisorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,4 +46,5 @@ Route::post('revisor/ad/{id}/accept', [RevisorController::class, 'accept'])->nam
 Route::post('revisor/ad/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');
 
 //Rotta pagina form per revisore
-Route::get('/revisor/request', [HomeController::class, 'request'])->name('revisor.request');
+Route::get('/revisor/form_request', [RequestRevisorController::class, 'formRequest'])->name('revisor.formRequest');
+Route::post('/revisor/request', [RequestRevisorController::class, 'request'])->name('revisor.request');

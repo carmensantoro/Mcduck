@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Richiesta per diventare Revisore</h1>
-    <p>{{$contactForm['name']}} Vuole diventare revisore</p>
-    <p>{{$contactForm['email']}} la sua email</p>
+    <p>{{$revisorRequest['name']}} vuole diventare revisore</p>
+    <p>{{$revisorRequest['email']}} la sua email</p>
 </body>
 </html>
