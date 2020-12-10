@@ -46,10 +46,37 @@ class AdController extends Controller
 
     public function search(Request $request) {
         $q = $request->input('q');
-        $ads = Ad::search($q)->get();
-    //   dd($ads); 
-        return view ('ads.search', compact('q', 'ads'));
+        $sortby = $request->input('sortby');
+        if ($sortby) {
+            switch ($sortby) {
+                case '1':
+                    $ads = Ad::search($q)->get();
+                    $ads = $ads->sortByDesc('id');
+                break;
+                case '2':
+                    $ads = Ad::search($q)->get();
+                    $ads = $ads->sortBy('id');
+                break;  
+                case '3':
+                    $ads = Ad::search($q)->get();
+                    $ads = $ads->sortByDesc('price');
+                break; 
+                case '4':
+                    $ads = Ad::search($q)->get();
+                    $ads = $ads->sortBy('price');
+                break; 
+            }
+            
+        }
+        else {
+            $ads = Ad::search($q)->get();
+            $ads = $ads->sortByDesc('id');
+        }
+
+        return view ('ads.search', compact('q', 'ads', 'sortby'));
     }
+
+
     
     /**
     * Show the form for creating a new resource.
