@@ -44,3 +44,5 @@ Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor
 Route::post('revisor/ad/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
 Route::post('revisor/ad/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');
 
+//Rotta pagina form per revisore
+Route::get('/revisor/request', [HomeController::class, 'request'])->name('revisor.request');
