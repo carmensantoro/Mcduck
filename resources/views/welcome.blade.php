@@ -70,7 +70,7 @@
                                             <h5 class="card-title mb-0">{{$ad->title}}</h5>
                                             <p class="card-text"><small class="text-muted">{{$ad->category()->get()->implode('name', ' ')}}</small></p>
                                             <h3>{{$ad->price}} €</h3>
-                                            <p class="card-text">{{$ad->body}}</p>
+                                            <p class="card-text text-truncate">{{$ad->body}}</p>
                                             <p>Caricato da: {{$ad->user()->get()->implode('name', '')}}</p>            
                                         </div>
                                     </div>
