@@ -14,7 +14,7 @@ class AdController extends Controller
     
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth')->except(['index', 'show', 'search']);
     }
 
     
@@ -44,8 +44,8 @@ class AdController extends Controller
     public function search(Request $request) {
         $q = $request->input('q');
         $ads = Ad::search($q)->get();
-        dd($ads);
-        return view ('search_result', compact('q', 'ads'));
+      /*   dd($ads); */
+        return view ('ads.search', compact('q', 'ads'));
     }
     
     /**
