@@ -15,11 +15,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('ads.index', ['category'=>'all'])}}">Tutti gli annunci</a>
             </li>
+            
             @auth
                 
-            
-                
-            
             @if(Auth::user()->is_revisor)
             <li class="nav-item">
                 <a href="{{ route('revisor.index')}}" class="nav-link">
@@ -30,6 +28,7 @@
                 </a>
             </li>
             @endif
+            
             @endauth
 
         </ul>

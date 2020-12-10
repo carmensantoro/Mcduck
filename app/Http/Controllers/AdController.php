@@ -72,9 +72,12 @@ class AdController extends Controller
                 'title'=>$request->title,
                 'body'=>$request->body,
                 'price'=>$request->price,
-                'category_id'=>$request->category
+                'category_id'=>$request->category_id
                 ]
             );
+            
+            //o si usa la forma qui sopra o questa di sotto, non cambia nulla
+            //$user->ads()->create($request->validated());
             
             return redirect()->back()->with('message', 'bene il tuo annuncio è stato inserito');
             

@@ -27,7 +27,7 @@ class StoreAd extends FormRequest
             'title'=>'required|max:20',
             'body'=>'required|max:500|min:20',
             'price'=>'required|numeric|min:0.01',
-            // 'category_id'=>'required'
+            'category_id'=>'required',
         ];
     }
 
@@ -41,7 +41,7 @@ class StoreAd extends FormRequest
             'price.required'=>'Devi mettere un prezzo',
             'price.numeric'=>'Devi mettere un numero',
             'price.min'=>'Il prezzo minimo è 0,01',
-            // 'category_id.required'=>'Devi selezionare una categoria',
+            'category_id.required'=>'Devi selezionare una categoria',
         ];
     }
 }

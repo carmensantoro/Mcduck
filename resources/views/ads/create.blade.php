@@ -28,9 +28,9 @@
                 @enderror
                 <div class="form-row">
                     <div class="col-12 col-md-6">
-                        <label class="font-weight-bold" for="category">Categoria</label>
-                        <select class="form-control" name="category" id="category">
-                            <option selected value="0">Seleziona una categoria</option>
+                        <label class="font-weight-bold" for="category_id">Categoria</label>
+                        <select class="form-control" name="category_id" id="category_id">
+                            <option selected value="">Seleziona una categoria</option>
                             @foreach ($categories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
