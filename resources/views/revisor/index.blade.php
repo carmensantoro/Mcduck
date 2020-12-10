@@ -1,5 +1,6 @@
 <x-layout>
-    <div class="container">
+    @if ($ad)
+        <div class="container">
         <div class="row my-5">
             <div class="col-12">
                 <div class="card">
@@ -44,4 +45,12 @@
             </div>
         </div>
     </div>
+    @else
+        <div class="container min-vh-100">
+            <div class="row my-5">
+                <div class="col-12"><h2 class="text-center"> Complimenti hai revisionato tutti gli annunci</h2></div>
+            </div>
+        </div>
+    @endif
+    
 </x-layout>
