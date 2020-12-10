@@ -291,13 +291,13 @@ footer {
     max-width: 600px;
     margin: auto;
     position: relative;
-    // background-color: white;
+    background-color: transparent!important;
     .coin-search {
         left: -100px;
         z-index: 2;
     }
     .input-search {
-     
+        background-color: #1a1a1ad9!important;
         #text-input {
             border: 0!important;
             color: white;
@@ -307,6 +307,9 @@ footer {
             color: white;
             opacity: 0.8; /* Firefox */
           }
+    }
+    .form-control:valid {
+        background-color: transparent!important;
     }
 }
 
