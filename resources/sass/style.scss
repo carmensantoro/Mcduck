@@ -231,6 +231,13 @@ input, textarea{
 
 
 
+/*Annuncio per diventare revisore*/
+.bg-money {
+    background: url('/media/euro.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 
 /*FOOTER*/
@@ -266,3 +273,5 @@ footer {
     background-color: var(--second-color) !important;
     color: var(--third-color) !important;
 }
+
+
