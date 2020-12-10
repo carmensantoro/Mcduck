@@ -1,37 +1,40 @@
 <x-layout>
     
     <header>
-
         {{-- Errore di accesso revisore --}}
         @if (session('access.denied.revisor.only'))
-            <div class="alert alert-danger">
-                Accesso non consentito - solo revisori
-            </div>
+        <div class="alert alert-danger">
+            Accesso non consentito - solo revisori
+        </div>
         @endif
-
         <div class="container-fluid h-100 bg-coin">
             <div class="row align-items-center text-center h-100 pt-n5 header-align">
                 <div class="col-12 px-auto px-md-5">
                     {{-- Barra di ricerca --}}
-                <form action="{{route('ads.search')}}" method="get">
-                        <div class="row no-gutters mt-3 align-items-center justify-content-center">
-                            <div class="col-12 col-sm-11 col-md-9 col-lg-5">
-                                <input class="form-control form-control-lg form-searchBorder rounded-pill shadow pr-5" type="text" name="q" placeholder="Cerca ciò che desideri">
+                    <div class="box-search-home">
+                        <form action="{{route('ads.search')}}" method="get">
+                            <div class="row no-gutters mt-3 align-items-center justify-content-center position-relative">
+                                <div class="col-3 coin-search position-absolute">
+                                <img src="/media/icon-coin.png" alt="" class="img-fluid">
+                                </div>
+                                <div class="col-12 d-flex bg-first p-2 pl-5 input-search rounded shadow">
+                                    <input class="form-control form-control-lg rounded-pill pr-5" id="text-input" type="text" name="q" placeholder="Cerca ciò che desideri">
+                          
+                          
+                                    <button class="btn btn-searchColor border-0 rounded-pill ml-n5" type="submit">
+                                        <i class="text-white fa fa-search"></i>
+                                    </button>
+                                </div>
                             </div>
-                            <div class="col-auto">
-                                <button class="btn btn-searchColor border-0 rounded-pill ml-n5" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
     
     <main>
-
+        
         {{-- Categorie --}}
         <div class="container-home">
             <div class="row text-center">
@@ -59,15 +62,16 @@
                             <div class="card mb-3 overflow-hidden">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
-                                        <img src="https://via.placeholder.com/300x150.png" class="card-img img-fluid" alt="...">
+                                        <img src="https://via.placeholder.com/300x230.png" class="card-img img-fluid" alt="...">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <h5 class="card-title">{{$ad->title}}</h5>
+                                            <span class="small d-block text-right"> Annuncio creato il: {{$ad->created_at->format('d/m/Y')}}</span>
+                                            <h5 class="card-title mb-0">{{$ad->title}}</h5>
                                             <p class="card-text"><small class="text-muted">{{$ad->category()->get()->implode('name', ' ')}}</small></p>
                                             <h3>{{$ad->price}} €</h3>
                                             <p class="card-text">{{$ad->body}}</p>
-                                            
+                                            <p>Caricato da: {{$ad->user()->get()->implode('name', '')}}</p>            
                                         </div>
                                     </div>
                                 </div>
@@ -78,19 +82,19 @@
                 </div>
             </div>
         </section>
-
-
+        
+        
         {{-- Annuncio per diventare revisore --}}
         <div class="container-fluid bg-money p-5">
             <div class="row text-center">
                 <div class="col-12">
                     <h2>Vuoi collaborare con noi e guadagnare soldi?</h2>
                     <h6>Diventa nostro revisore!</h6>
-                <a class="btn btn-custom rounded-pill" href="{{ route('revisor.formRequest') }}">Clicca qui</a>
+                    <a class="btn btn-custom rounded-pill" href="{{ route('revisor.formRequest') }}">Clicca qui</a>
                 </div>
             </div>
         </div>
-
-
+        
+        
     </main>
 </x-layout>

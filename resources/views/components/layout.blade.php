@@ -16,7 +16,9 @@
 
 <x-navbar/>
 
+<div class="min-h75">
 {{$slot}}
+</div>
 
 <x-footer/>
 
