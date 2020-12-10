@@ -9,6 +9,8 @@
 <body>
     <h1>Richiesta per diventare Revisore</h1>
     <p>{{$revisorRequest['name']}} vuole diventare revisore</p>
-    <p>{{$revisorRequest['email']}} la sua email</p>
+    <p>la sua email è: {{$revisorRequest['email']}} </p>
+    <h4>Volgio diventare revisore perché:</h4>
+    <p>{{$revisorRequest['motivation']}}</p>
 </body>
 </html>
