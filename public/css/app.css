@@ -17077,6 +17077,10 @@ readers do not read off random characters that represent icons */
   width: fit-content !important;
 }
 
+.min-h75 {
+  min-height: 75vh;
+}
+
 a {
   color: black;
 }
@@ -17306,5 +17310,45 @@ footer {
 .social-icons .social-icon:hover {
   background-color: var(--second-color) !important;
   color: var(--third-color) !important;
+}
+
+/*HOME*/
+
+.box-search-home {
+  width: auto;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+}
+
+.box-search-home .coin-search {
+  left: -100px;
+  z-index: 2;
+}
+
+.box-search-home .input-search #text-input {
+  border: 0 !important;
+  color: white;
+}
+
+.box-search-home .input-search #text-input::-moz-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.8;
+  /* Firefox */
+}
+
+.box-search-home .input-search #text-input:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.8;
+  /* Firefox */
+}
+
+.box-search-home .input-search #text-input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.8;
+  /* Firefox */
 }
 

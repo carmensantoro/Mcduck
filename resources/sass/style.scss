@@ -44,6 +44,9 @@
     width: fit-content!important;
 }
 
+.min-h75 {
+    min-height: 75vh;
+}
 a {
     color: black;
 }
@@ -52,6 +55,7 @@ a:hover {
     text-decoration: none !important;
     color: var(--second-color) !important;
 }
+
 
 /*NAVBAR*/
 .btn-custom {
@@ -274,4 +278,29 @@ footer {
     color: var(--third-color) !important;
 }
 
+
+/*HOME*/
+.box-search-home {
+    width: auto;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+    // background-color: white;
+    .coin-search {
+        left: -100px;
+        z-index: 2;
+    }
+    .input-search {
+     
+        #text-input {
+            border: 0!important;
+            color: white;
+        }
+        #text-input::placeholder { 
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 0.8; /* Firefox */
+          }
+    }
+}
 
