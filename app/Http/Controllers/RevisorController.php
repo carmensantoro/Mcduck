@@ -17,14 +17,14 @@ class RevisorController extends Controller
        $ad = Ad::where('is_accepted', null)
        ->orderBy('created_at', 'desc')
        ->first();
-       return view('revisor.home', compact('ad'));
+       return view('revisor.index', compact('ad'));
     }
 
     private function setAccepted($ad_id, $value) {
         $ad = Ad::find($ad_id);
         $ad->is_accepted = $value;
         $ad->save();
-        return redirect(route('revisor.home'));
+        return redirect(route('revisor.index'));
     }
 
     public function accept($ad_id) {
