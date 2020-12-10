@@ -17601,11 +17601,16 @@ footer {
   max-width: 600px;
   margin: auto;
   position: relative;
+  background-color: transparent !important;
 }
 
 .box-search-home .coin-search {
   left: -100px;
   z-index: 2;
+}
+
+.box-search-home .input-search {
+  background-color: #1a1a1ad9 !important;
 }
 
 .box-search-home .input-search #text-input {
@@ -17632,5 +17637,9 @@ footer {
   color: white;
   opacity: 0.8;
   /* Firefox */
+}
+
+.box-search-home .form-control:valid {
+  background-color: transparent !important;
 }
 
