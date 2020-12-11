@@ -32,7 +32,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{$ad->title}}</h5>
                                     <p class="card-text"><small class="text-muted">{{$ad->category()->get()->implode('name', ' ')}}</small></p>
-                                    <p class="card-text">{{$ad->body}}</p>
+                                    <p class="card-text text-truncate">{{$ad->body}}</p>
                                     <h5 class="text-right">{{$ad->price}} €</h5>
                                     
                                 </div>
