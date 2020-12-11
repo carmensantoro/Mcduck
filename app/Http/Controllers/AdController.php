@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ad;
+use App\Models\AdImage;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreAd;
-use App\Models\Category;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class AdController extends Controller
 {
@@ -100,7 +103,7 @@ class AdController extends Controller
     public function store(StoreAd $request)
     {
         $user=Auth::user();
-        $user->ads()->create(
+        $a = $user->ads()->create(
             [
                 'title'=>$request->title,
                 'body'=>$request->body,
@@ -112,12 +115,40 @@ class AdController extends Controller
             //o si usa la forma qui sopra o questa di sotto, non cambia nulla
             //$user->ads()->create($request->validated());
             $uniqueSecret = $request->input('uniqueSecret');
-            dd($uniqueSecret);
             
-            return redirect()->back()->with('message', 'bene il tuo annuncio è stato inserito');
+            $images = session()->get("images.{$uniqueSecret}");
+
+            foreach ($images as $image) {
+                $i = new AdImage();
+
+                $fileName = basename($image);
+                $newFileName = "public/ad/{$a->id}/{$fileName}";
+                Storage::move($image, $newFileName);
+
+                $i->file = $newFileName;
+                $i->ad_id = $a->id;
+
+                $i->save();
+            }
+
+            File::deleteDirectory(storage_path("app/public/temp/{$uniqueSecret}"));
+
+            return redirect()->back()->with('message', 'Bene, il tuo annuncio è stato inserito');
             
         }
         
+        public function uploadImage(Request $request){
+
+            $uniqueSecret = $request->input('uniqueSecret');
+
+            $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
+
+            session()->push("images.{$uniqueSecret}", $fileName);
+
+            return response()->json(['id'=>$fileName]);
+        }
+    
+
         /**
         * Display the specified resource.
         *
