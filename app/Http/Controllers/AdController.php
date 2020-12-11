@@ -85,7 +85,10 @@ class AdController extends Controller
     */
     public function create()
     {
-        return view('ads.create');
+
+        $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+        return view('ads.create', compact('uniqueSecret'));
+
     }
     
     /**
@@ -108,6 +111,8 @@ class AdController extends Controller
             
             //o si usa la forma qui sopra o questa di sotto, non cambia nulla
             //$user->ads()->create($request->validated());
+            $uniqueSecret = $request->input('uniqueSecret');
+            dd($uniqueSecret);
             
             return redirect()->back()->with('message', 'bene il tuo annuncio è stato inserito');
             

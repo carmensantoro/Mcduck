@@ -11,6 +11,8 @@
         <div class="row">
             <form class="col-12" action="{{route('ads.store')}}" method="POST">
                 @csrf
+                <input type="hidden" name="uniqueSecret" value="{{ $uniqueSecret }}">
+                
                 <div class="form-group">
                     <label class="font-weight-bold" for="title_ad">Titolo</label>
                     <input type="text" name="title" value="{{old('title')}}" class="form-control rounded" id="title_ad" aria-describedby="emailHelp">
