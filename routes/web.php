@@ -32,6 +32,8 @@ Route::get('/ads/index/{category}', [AdController::class, 'index'])->name('ads.i
 // Creazione e salvataggio
 Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
 Route::post('/ads/store', [AdController::class, 'store'])->name('ads.store');
+Route::post('/ads/images/upload', [AdController::class, 'uploadImage'])->name('ads.images.upload');
+
 // Dettaglio annuncio
 Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
 

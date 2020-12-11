@@ -3,10 +3,11 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\AdImage;
 use App\Models\Category;
+use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Laravel\Scout\Searchable;
 
 class Ad extends Model
 {
@@ -41,6 +42,11 @@ class Ad extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(AdImage::class);
     }
 
     static public function ToBeRevisionedCount(){
