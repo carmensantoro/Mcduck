@@ -29,21 +29,24 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 //Rotte per annunci
 // Lista annunci
 Route::get('/ads/index/{category}', [AdController::class, 'index'])->name('ads.index');
-// Creazione e salvataggio
+// Creazione e salvataggio degli annunci
 Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
 Route::post('/ads/store', [AdController::class, 'store'])->name('ads.store');
-Route::post('/ads/images/upload', [AdController::class, 'uploadImage'])->name('ads.images.upload');
-Route::delete('/ads/images/remove', [AdController::class, 'removeImage'])->name('ads.images.remove');
-
 // Dettaglio annuncio
 Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
+
+//Rotte immagini
+Route::post('/ads/images/upload', [AdController::class, 'uploadImage'])->name('ads.images.upload');
+Route::delete('/ads/images/remove', [AdController::class, 'removeImage'])->name('ads.images.remove');
+Route::get('/ad/images', [AdController::class, 'getImages'])->name('ad.images');
 
 // Annunci filtrati per categoria
 // Route::get('ads/index/{category}', [AdController::class, 'index'])->name('adscategory.index');
 
 // Rotta ricerca libera
 Route::get('/search', [AdController::class, 'search'])->name('ads.search');
-//rotte per revisore
+
+//Rotte per revisore
 Route::get('/revisor/index', [RevisorController::class, 'index'])->name('revisor.index');
 Route::post('revisor/ad/{id}/accept', [RevisorController::class, 'accept'])->name('revisor.accept');
 Route::post('revisor/ad/{id}/reject', [RevisorController::class, 'reject'])->name('revisor.reject');

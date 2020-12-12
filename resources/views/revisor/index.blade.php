@@ -21,15 +21,13 @@
                             
                         </div>
                         <div class="row mb-5 overflow-hidden">
-                            <div class="col-12 col-md-4 mt-5">
-                                <img class="d-block mx-auto" src="https://via.placeholder.com/300x150.png" alt="">
+                            @foreach ($ad->images as $image)
+                                     <div class="col-12 col-md-4 mt-5">
+                                <img class="d-block mx-auto" src="{{Storage::url($image->file)}}" width="300" height="300" alt="">
                             </div>
-                            <div class="col-12 col-md-4 mt-5">
-                                <img class="d-block mx-auto" src="https://via.placeholder.com/300x150.png" alt="">
-                            </div>
-                            <div class="col-12 col-md-4 mt-5">
-                                <img class="d-block mx-auto" src="https://via.placeholder.com/300x150.png" alt="">
-                            </div>
+                            @endforeach
+                       
+                           
                         </div>
                         <div class="row">
                             <div class="col-12 text-right">

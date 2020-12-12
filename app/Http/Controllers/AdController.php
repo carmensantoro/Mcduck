@@ -86,10 +86,10 @@ class AdController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function create()
+    public function create(Request $request)
     {
 
-        $uniqueSecret = base_convert(sha1(uniqid(mt_rand())), 16, 36);
+        $uniqueSecret = $request-> old('uniqueSecret', base_convert(sha1(uniqid(mt_rand())), 16, 36));
         return view('ads.create', compact('uniqueSecret'));
 
     }
@@ -162,6 +162,28 @@ class AdController extends Controller
             Storage::delete($fileName);
 
             return response()->json('ok');
+        }
+
+        public function getImages(Request $request) {
+
+            $uniqueSecret = $request->input('uniqueSecret');
+
+            $images = session()->get("images.{$uniqueSecret}", []);
+            $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
+            
+            $images = array_diff($images, $removedImages);
+
+            $data = [];
+
+            foreach ($images as $image) {
+                $data[] = [
+                    'id' => $image,
+                    'src' => Storage::url($image)
+                ];
+            }
+
+            return response()->json($data);
+
         }
 
         /**
