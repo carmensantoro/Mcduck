@@ -12,5 +12,6 @@
     <p>la sua email è: {{$revisorRequest['email']}} </p>
     <h4>Volgio diventare revisore perché:</h4>
     <p>{{$revisorRequest['motivation']}}</p>
+    <a class="btn-custom rounded-pill" href="http://localhost:8000/revisor/{{$revisorRequest['email']}}/confirm"> Rendi revisore</a>
 </body>
 </html>

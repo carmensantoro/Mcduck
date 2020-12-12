@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 
 class MakeUserRevisor extends Command
 {
-    protected $signature = 'presto:makeUserRevisor';
+    protected $signature = 'presto:makeUserRevisor {email?}';
     protected $description = 'Rendi un utente revisore';
 
 
@@ -18,7 +18,8 @@ class MakeUserRevisor extends Command
 
     public function handle()
     {
-        $email = $this->ask("Inserisci l'email dell'utente che vuoi rendere revisore");
+        //$email = $this->ask("Inserisci l'email dell'utente che vuoi rendere revisore");
+        $email = $this->argument("email") ?? $this->ask("Inserisci l'email dell'utente che vuoi rendere revisore");
 
         $user = User::where('email', $email)->first();
 
