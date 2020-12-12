@@ -10,7 +10,26 @@ $(function () {
             params: {
                 _token: csrfToken,
                 uniqueSecret: uniqueSecret
-            }
+            },
+
+            addRemoveLinks: true
+        });
+
+        myDropzone.on("success", function(file, response) {
+            file.serverId = response.id;
+        });
+
+        myDropzone.on("removedfile", function(file) {
+            $.ajax({
+                type: 'DELETE',
+                url: '/ads/images/remove',
+                data: {
+                    _token: csrfToken,
+                    id: file.serverID,
+                    uniqueSecret: uniqueSecret
+                },
+                dataType: 'json'
+            });
         });
     }
 })

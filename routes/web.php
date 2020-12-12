@@ -33,6 +33,7 @@ Route::get('/ads/index/{category}', [AdController::class, 'index'])->name('ads.i
 Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
 Route::post('/ads/store', [AdController::class, 'store'])->name('ads.store');
 Route::post('/ads/images/upload', [AdController::class, 'uploadImage'])->name('ads.images.upload');
+Route::delete('/ads/images/remove', [AdController::class, 'removeImage'])->name('ads.images.remove');
 
 // Dettaglio annuncio
 Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');

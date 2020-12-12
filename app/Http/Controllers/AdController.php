@@ -116,7 +116,10 @@ class AdController extends Controller
             //$user->ads()->create($request->validated());
             $uniqueSecret = $request->input('uniqueSecret');
             
-            $images = session()->get("images.{$uniqueSecret}");
+            $images = session()->get("images.{$uniqueSecret}", []);
+            $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
+            
+            $images = array_diff($images, $removedImages);
 
             foreach ($images as $image) {
                 $i = new AdImage();
@@ -148,6 +151,18 @@ class AdController extends Controller
             return response()->json(['id'=>$fileName]);
         }
     
+
+        public function removeImage(Request $request) {
+            $uniqueSecret = $request->input('uniqueSecret');
+
+            $fileName = $request->input('id');
+
+            session()->push("removedimages.{$uniqueSecret}", $fileName);
+
+            Storage::delete($fileName);
+
+            return response()->json('ok');
+        }
 
         /**
         * Display the specified resource.
