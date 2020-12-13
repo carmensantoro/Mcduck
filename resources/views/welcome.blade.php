@@ -58,7 +58,7 @@
                 <div class="row">
                     @foreach ($ads as $ad)
                     <div class="col-12">
-                        <a href="{{route('ads.show', compact('ad'))}}">
+                        {{-- <a href="{{route('ads.show', compact('ad'))}}"> --}}
                             <div class="card mb-3 overflow-hidden">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
@@ -71,12 +71,20 @@
                                             <p class="card-text"><small class="text-muted">{{$ad->category()->get()->implode('name', ' ')}}</small></p>
                                             <h3>{{$ad->price}} €</h3>
                                             <p class="card-text text-truncate">{{$ad->body}}</p>
+                                            <button class="btn" onclick="favor({{$ad->id}})"> 
+                                                @if (($favorite->firstWhere('ad_id', "$ad->id")))
+                                                    <i id="{{$ad->id}}" class="fas fa-heart"></i>
+                                                @else
+                                                    <i id="{{$ad->id}}" class="far fa-heart"></i>
+                                                @endif
+                                                
+                                            </button>
                                             <p>Caricato da: {{$ad->user()->get()->implode('name', '')}}</p>            
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        {{-- </a> --}}
                     </div>
                     @endforeach
                 </div>
@@ -97,4 +105,22 @@
         
         
     </main>
+
+    {{-- <script>
+        function favor($id) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                  if (!this.responseText) {
+                    document.getElementById(`${$id}`).classList.toggle("far");
+                    document.getElementById(`${$id}`).classList.toggle("fas");
+                  } else {
+                    alert(this.responseText);  
+                  }
+              }
+            };
+            xmlhttp.open("GET", `/user/favorites/${$id}` , true);
+            xmlhttp.send();
+        }
+        </script> --}}
 </x-layout>

@@ -55,3 +55,6 @@ Route::post('revisor/ad/{id}/reject', [RevisorController::class, 'reject'])->nam
 Route::get('/revisor/form_request', [RequestRevisorController::class, 'formRequest'])->name('revisor.formRequest');
 Route::post('/revisor/request', [RequestRevisorController::class, 'request'])->name('revisor.request');
 Route::get('/revisor/{email}/confirm', [RequestRevisorController::class, 'confirmRevisor'])->name('revisor.confirm');
+
+//Rotta per Preferiti
+Route::get('/user/favorites/{id}', [HomeController::class, 'saveFavorites']);

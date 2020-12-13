@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -25,14 +26,32 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $ads = Ad::where('is_accepted', true)
                 ->orderBy('created_at', 'desc')
                 ->take(5)
                 ->get();
+        
+        //per fare la visualizzazione dei preferiti        
+        $favorite=collect([]);       
+        if ($user) {
+           $favorite = $user->favorites->pluck('pivot');
+        }
 
-        return view('welcome', compact('ads'));
+        return view('welcome', compact('ads', 'favorite'));
+    } 
+
+    public function saveFavorites($id){
+       
+        $user = Auth::user();
+
+        if ($user) {
+            $user->favorites()->toggle($id);
+            //return response()->json('bravo');
+        } else {
+            return response()->json('devi essere registatro');
+        }
+
     }
-
-    
     
 }
