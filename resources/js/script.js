@@ -33,3 +33,16 @@ window.favor = function ($id) {
   xmlhttp.open("GET", `/user/favorites/${$id}`, true);
   xmlhttp.send();
 }
+
+
+//Navbar
+let navbar = document.querySelector('#navbar')
+
+if (window.innerWidth > 576) {
+    document.addEventListener('scroll', () => {
+        if (window.pageYOffset > 20) {
+            navbar.classList.add('shadow')
+        } else {
+            navbar.classList.remove('shadow')
+        }
+      })}

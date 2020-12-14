@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-lg sticky-top navbar-light bg-white shadow">
+<nav id="navbar" class="navbar navbar-expand-lg sticky-top navbar-light bg-white">
     <a class="navbar-brand ml-md-5" href="{{route('home')}}"><img src="/media/icon-coin.png" alt="" width="50" class="mr-1">McDuck 
         
     </a>
