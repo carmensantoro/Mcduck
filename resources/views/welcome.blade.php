@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <span class="small d-block text-right"> Annuncio creato il: {{$ad->created_at->format('d/m/Y')}}</span>
+                                            <span class="small d-block text-right">{{__('ui.CreatedOn')}}{{$ad->created_at->format('d/m/Y')}}</span>
                                             <h5 class="card-title mb-0">{{$ad->title}}</h5>
                                             <p class="card-text"><small class="text-muted">{{$ad->category()->get()->implode('name', ' ')}}</small></p>
                                             <h3>{{$ad->price}} €</h3>
@@ -81,7 +81,7 @@
                                                 @endif
                                                 
                                             </button>
-                                            <p>Caricato da: {{$ad->user()->get()->implode('name', '')}}</p>            
+                                            <p>{{__('ui.UploadBy')}}{{$ad->user()->get()->implode('name', '')}}</p>            
                                         </div>
                                     </div>
                                 </div>
