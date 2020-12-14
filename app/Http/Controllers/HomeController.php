@@ -32,10 +32,10 @@ class HomeController extends Controller
                 ->take(5)
                 ->get();
         
-        //per fare la visualizzazione dei preferiti        
+        //Per fare la visualizzazione dei preferiti        
         $favorite=collect([]);       
         if ($user) {
-           $favorite = $user->favorites->pluck('pivot');
+            $favorite = $user->favorites->pluck('pivot');
         }
 
         return view('welcome', compact('ads', 'favorite'));
@@ -49,9 +49,14 @@ class HomeController extends Controller
             $user->favorites()->toggle($id);
             //return response()->json('bravo');
         } else {
-            return response()->json('devi essere registatro');
+            return response()->json('devi essere registrato');
         }
 
+    }
+
+    public function locale($locale){
+        session()->put('locale', $locale);
+        return redirect()->back();
     }
     
 }

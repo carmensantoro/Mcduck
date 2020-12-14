@@ -1,4 +1,4 @@
-// slick
+// Slick
 $(document).ready(function () {
   $('.product-img-detail').slick({
     slidesToShow: 1,
@@ -17,6 +17,7 @@ $(document).ready(function () {
   });
 });
 
+// Per i favoriti
 window.favor = function ($id) {
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {

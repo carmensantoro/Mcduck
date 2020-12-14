@@ -17,7 +17,7 @@
             </li>
             
             @auth
-                
+            
             @if(Auth::user()->is_revisor)
             <li class="nav-item">
                 <a href="{{ route('revisor.index')}}" class="nav-link">
@@ -30,7 +30,7 @@
             @endif
             
             @endauth
-
+            
         </ul>
         
         
@@ -70,6 +70,20 @@
             <li class="nav-item mr-md-3 my-2 my-lg-0">
                 <a class="btn btn-newAd rounded-pill" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
             </li> 
+            
+            <li class="nav-item dropdown">
+                <a class="flag-icon flag-icon-it" id="dropdownLocale" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  role="button">
+
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownLocale">
+                    <form class="dropdown-item" action="{{route('locale', 'it')}}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn"> <span class="flag-icon flag-icon-it"></span></button>
+                    </form>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
         </ul>
     </div>
 </nav>

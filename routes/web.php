@@ -58,3 +58,6 @@ Route::get('/revisor/{email}/confirm', [RequestRevisorController::class, 'confir
 
 //Rotta per Preferiti
 Route::get('/user/favorites/{id}', [HomeController::class, 'saveFavorites']);
+
+//Rotta per le lingue
+Route::post('locale/{locale}', [HomeController::class, 'locale'])->name('locale');
