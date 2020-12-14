@@ -18,7 +18,7 @@
                                 <img src="/media/icon-coin.png" alt="" class="img-fluid">
                                 </div>
                                 <div class="col-12 d-flex p-2 pl-5 input-search rounded shadow">
-                                    <input class="form-control form-control-lg rounded pr-5" id="text-input" type="text" name="q" placeholder="Cerca ciò che desideri">
+                                    <input class="form-control form-control-lg rounded pr-5" id="text-input" type="text" name="q" placeholder="{{__('ui.search')}}">
                           
                           
                                     <button class="btn btn-searchColor border-0 rounded ml-n5" type="submit">

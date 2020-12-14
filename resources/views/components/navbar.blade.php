@@ -68,15 +68,18 @@
             @endguest
             
             <li class="nav-item mr-md-3 my-2 my-lg-0">
-                <a class="btn btn-newAd rounded" href="{{route('ads.create')}}">Crea il tuo annuncio</a>
+                <a class="btn btn-newAd rounded" href="{{route('ads.create')}}">{{__('ui.CreateAd')}}</a>
             </li> 
             
             <li class="nav-item dropdown">
-                <form class="nav-link dropdown-item dropdown-toggle" action="{{route('locale', 'it')}}" method="POST" href="#" id="dropdownLocale" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    @csrf
-                    <button type="submit" class="btn"><span class="flag-icon flag-icon-it"></span></button>
-                </form>
+                <div class="nav-link dropdown-item dropdown-toggle" href="#" id="dropdownLocale" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ __('ui.lang') }}
+                </div>
                 <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownLocale">
+                    <form class="dropdown-item" action="{{route('locale', 'it')}}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn"><span class="flag-icon flag-icon-it"></span></button>
+                    </form>
                     <form class="dropdown-item" action="{{route('locale', 'en')}}" method="POST">
                         @csrf
                         <button type="submit" class="btn"><span class="flag-icon flag-icon-gb"></span></button>
