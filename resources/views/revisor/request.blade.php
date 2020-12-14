@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-4">
                     
-                    <button type="submit" class="btn btn-newAd text-center rounded-pill"><i class="fas fa-chevron-right"></i>  Invia</button>
+                    <button type="submit" class="btn btn-newAd text-center rounded"><i class="fas fa-chevron-right"></i>  Invia</button>
                     </div>
                     </div>
                 </form>
