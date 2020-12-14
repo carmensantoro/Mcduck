@@ -36,7 +36,7 @@
     <main>
         
         {{-- Categorie --}}
-        <div class="container-home">
+        <div class="container-home rounded">
             <div class="row text-center">
                 
                 @foreach ($categories as $category)                
