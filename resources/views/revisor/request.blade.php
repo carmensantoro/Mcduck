@@ -15,17 +15,17 @@
                     
                     <div class="form-group mb-4">
                         <label for="motivation_revisor" class="mb-0 text-secondary font-weight-bold">Perchè vuoi unirti a noi?</label>
-                        <textarea name="motivation_revisor" id="motivation_revisor" class="form-control rounded" rows="10"></textarea>
+                        <textarea name="motivation_revisor" id="motivation_revisor" class="form-control rounded font-weight-bold" rows="10"></textarea>
                     </div>
                     <div class="custom-control custom-radio custom-checkbox mb-4">
-                        <input type="checkbox" class="custom-control-input" id="privacy">
+                        <input required type="checkbox" class="custom-control-input" id="privacy">
                         <label class="custom-control-label text-secondary font-italic" for="privacy">Accetto termini e condizioni</label>
                     </div>
                     
-                    <div class="row">
-                        <div class="col-4">
+                    <div class="row justify-content-end">
+                        <div class="col-3">
                     
-                    <button type="submit" class="btn btn-newAd text-center rounded"><i class="fas fa-chevron-right"></i>  Invia</button>
+                    <button type="submit" class="btn btn-newAd text-center rounded w-100"><i class="fas fa-chevron-right"></i>  Invia</button>
                     </div>
                     </div>
                 </form>

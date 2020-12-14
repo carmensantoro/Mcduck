@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row my-5">
             <div class="col-12">
-                <div class="card border-0">
+                <div class="card border-0 shadow">
                     <div class="card-header text-center">
                         Annuncio # {{$ad->id}}
                     </div>
