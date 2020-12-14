@@ -18,10 +18,10 @@
                                 <img src="/media/icon-coin.png" alt="" class="img-fluid">
                                 </div>
                                 <div class="col-12 d-flex p-2 pl-5 input-search rounded shadow">
-                                    <input class="form-control form-control-lg rounded-pill pr-5" id="text-input" type="text" name="q" placeholder="Cerca ciò che desideri">
+                                    <input class="form-control form-control-lg rounded pr-5" id="text-input" type="text" name="q" placeholder="Cerca ciò che desideri">
                           
                           
-                                    <button class="btn btn-searchColor border-0 rounded-pill ml-n5" type="submit">
+                                    <button class="btn btn-searchColor border-0 rounded ml-n5" type="submit">
                                         <i class="text-white fa fa-search"></i>
                                     </button>
                                 </div>
@@ -41,7 +41,7 @@
                 
                 @foreach ($categories as $category)                
                 <div class="col-6 col-md-4 col-lg-3">
-                    <div class="my-3 card-category">
+                    <div class="my-3 card-category rounded">
                         <div class="card-body font-weight-bold"> 
                             <a href="{{route('ads.index', compact('category'))}}">{{$category->name}}</a>
                         </div>
@@ -100,7 +100,7 @@
                 <div class="col-12">
                     <h2 class="font-weight-bold">Vuoi collaborare con noi e guadagnare soldi?</h2>
                     <h6 class="font-weight-bold">Diventa nostro revisore!</h6>
-                    <a class="btn btn-custom rounded-pill" href="{{ route('revisor.formRequest') }}">Clicca qui</a>
+                    <a class="btn btn-custom rounded" href="{{ route('revisor.formRequest') }}">Clicca qui</a>
                 </div>
             </div>
         </div>
