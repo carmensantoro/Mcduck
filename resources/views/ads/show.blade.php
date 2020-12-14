@@ -7,17 +7,17 @@
             
             <div class="col-12 col-md-6 position-relative">
                 <div class="product-img-detail w-100">
-                    <img src="/media/car1.jpeg" class="img-fluid" alt="">
-                    <img src="/media/car2.jpeg" class="img-fluid" alt="">
-                    <img src="/media/car3.jpeg" class="img-fluid" alt="">
-                    <img src="/media/car4.jpeg" class="img-fluid" alt="">
+                    @foreach ($ad->images as $image)
+                    <img class="img-fluid" src="{{$image->getUrl(400, 300)}}" alt="">
+                    @endforeach
+                    
+    
                 </div>
                 
                 <div class="product-img-nav pt-2">
-                    <img src="/media/car1.jpeg" class="img-fluid mx-2" alt="">
-                    <img src="/media/car2.jpeg" class="img-fluid mx-2" alt="">
-                    <img src="/media/car3.jpeg" class="img-fluid mx-2" alt="">
-                    <img src="/media/car4.jpeg" class="img-fluid mx-2" alt="">
+                    @foreach ($ad->images as $image)
+                    <img class="img-fluid mx-2" src="{{$image->getUrl(400, 300)}}" alt="">
+                    @endforeach
                     
                 </div>
                 

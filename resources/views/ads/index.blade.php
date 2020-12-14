@@ -26,12 +26,16 @@
                     <div class="card mb-3 overflow-hidden">
                         <div class="row no-gutters">
                             <div class="col-md-4">
-                                <img src="https://via.placeholder.com/300x300.png" class="card-img img-fluid" alt="...">
+                                @if(count($ad->images) > 0)
+                                <img src="{{$ad->images->first()->getUrl(400, 300)}}" class="card-img img-fluid" alt="..."> 
+                                @endif
+
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">{{$ad->title}}</h5>
                                     <p class="card-text"><small class="text-muted">{{$ad->category()->get()->implode('name', ' ')}}</small></p>
+                                    <p class="card-text">
                                     <p class="card-text text-truncate">{{$ad->body}}</p>
                                     <h5 class="text-right">{{$ad->price}} €</h5>
                                     

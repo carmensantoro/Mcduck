@@ -22,12 +22,13 @@
                         </div>
                         <div class="row mb-5 overflow-hidden">
                             @foreach ($ad->images as $image)
-                                     <div class="col-12 col-md-4 mt-5">
-                                <img class="d-block mx-auto" src="{{Storage::url($image->file)}}" width="300" height="300" alt="">
+                            <div class="col-12 col-md-4 mt-5">
+                                <img class="d-block img-fluid mx-2" src="{{$image->getUrl(400, 300)}}" alt="">
                             </div>
+                            
                             @endforeach
-                       
-                           
+                            
+                            
                         </div>
                         <div class="row">
                             <div class="col-12 text-right">
