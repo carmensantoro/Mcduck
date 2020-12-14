@@ -37,35 +37,12 @@ window.favor = function ($id) {
 
 //Navbar
 let navbar = document.querySelector('#navbar')
-let navbarBrand = document.querySelector('#navbarBrand')
-let navbarCTAScroll = document.querySelector('#navbarCTAScroll')
-
 
 if (window.innerWidth > 576) {
     document.addEventListener('scroll', () => {
         if (window.pageYOffset > 20) {
-            navbar.classList.remove('bg-transparent')
-            navbar.classList.add('bg-white', 'shadow')
-            navbarBrand.classList.add('text-dark')
-            navbarBrand.classList.remove('text-white')
-                //navbarBrand.src = "dove si trova il logo" 
+            navbar.classList.add('shadow')
         } else {
-            navbar.classList.remove('bg-white', 'shadow')
-            navbar.classList.add('bg-transparent')
-            navbarBrand.classList.add('text-white')
-            navbarBrand.classList.remove('text-dark')
-                // navbarBrand.src = "dove si trova l'altro logo", mettendo questo pezzo di codice, sia in if che else
-                // ci permetterà di cambiare il logo al movimento dela navbar
+            navbar.classList.remove('shadow')
         }
-
-
-        if (window.pageYOffset > window.innerHeight) {
-            navbarCTAScroll.classList.remove('d-none')
-        } else {
-            navbarCTAScroll.classList.add('d-none')
-        }
-    })
-} else {
-    navbarBrand.classList.add('bg-white')
-        //navbarBrand.src = "dove si trova il logo" che cambierà il logo superata la wall default
-}
+      })}
