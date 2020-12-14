@@ -26,12 +26,12 @@
             
             
             <div class="col-12 col-md-6">
-                <span class="small"> Annuncio creato il: {{$ad->created_at->format('d/m/Y')}}</span>
+                <span class="small">{{__('ui.CreatedOn')}}{{$ad->created_at->format('d/m/Y')}}</span>
                 <h1 class="card-title">{{$ad->title}}</h1>
                 <p class="bg-second shadow rounded card-text w-fit px-2 "><small class="text-white">{{$ad->category()->get()->implode('name', ' ')}}</small></p>
                 <h3>{{$ad->price}} €</h3>
                 <p class="card-text">{{$ad->body}}</p>
-                <p>Caricato da: {{$ad->user()->get()->implode('name', '')}}</p>
+                <p>{{__('ui.UploadBy')}}{{$ad->user()->get()->implode('name', '')}}</p>
             </div>
             
         </div>
