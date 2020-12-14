@@ -7,6 +7,7 @@ use App\Models\AdImage;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreAd;
+use App\Jobs\ResizeImage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -128,6 +129,12 @@ class AdController extends Controller
                 $newFileName = "public/ad/{$a->id}/{$fileName}";
                 Storage::move($image, $newFileName);
 
+                dispatch(new ResizeImage(
+                    $newFileName,
+                    400,
+                    300
+                ));
+
                 $i->file = $newFileName;
                 $i->ad_id = $a->id;
 
@@ -146,7 +153,15 @@ class AdController extends Controller
 
             $fileName = $request->file('file')->store("public/temp/{$uniqueSecret}");
 
+            dispatch(new ResizeImage(
+                $fileName,
+                120,
+                120
+            ));
+
             session()->push("images.{$uniqueSecret}", $fileName);
+
+            
 
             return response()->json(['id'=>$fileName]);
         }
@@ -178,7 +193,7 @@ class AdController extends Controller
             foreach ($images as $image) {
                 $data[] = [
                     'id' => $image,
-                    'src' => Storage::url($image)
+                    'src' => AdImage::getUrlByFilePath($image, 120, 120)
                 ];
             }
 
