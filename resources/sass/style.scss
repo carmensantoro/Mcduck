@@ -299,3 +299,12 @@ footer {
     left: 90%;
     z-index: 9;
 }
+
+@media screen and (max-width:767px) {
+    .heart {
+        position: absolute;
+        top: 85%;
+        left: 75%;
+        z-index: 9;
+    }
+}
