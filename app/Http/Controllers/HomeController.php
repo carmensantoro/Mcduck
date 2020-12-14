@@ -9,49 +9,56 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+    * Create a new controller instance.
+    *
+    * @return void
+    */
     
     // public function __construct()
     // {
-    //     $this->middleware('auth');
-    // }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        $user = Auth::user();
-        $ads = Ad::where('is_accepted', true)
-                ->orderBy('created_at', 'desc')
-                ->take(5)
-                ->get();
+        //     $this->middleware('auth');
+        // }
         
-        //per fare la visualizzazione dei preferiti        
-        $favorite=collect([]);       
-        if ($user) {
-           $favorite = $user->favorites->pluck('pivot');
+        /**
+        * Show the application dashboard.
+        *
+        * @return \Illuminate\Contracts\Support\Renderable
+        */
+        public function index()
+        {
+            $user = Auth::user();
+            $ads = Ad::where('is_accepted', true)
+            ->orderBy('created_at', 'desc')
+            ->take(5)
+            ->get();
+            
+            //Per fare la visualizzazione dei preferiti        
+            $favorite=collect([]);       
+            if ($user) {
+                $favorite = $user->favorites->pluck('pivot');
+            }
+            
+            return view('welcome', compact('ads', 'favorite'));
+        } 
+        
+        public function saveFavorites($id){
+            
+            $user = Auth::user();
+            
+            if ($user) {
+                $user->favorites()->toggle($id);
+                //return response()->json('bravo');
+            } else {
+                return response()->json('devi essere registrato');
+            }
+            
         }
-
-        return view('welcome', compact('ads', 'favorite'));
-    } 
-
-    public function saveFavorites($id){
-       
-        $user = Auth::user();
-
-        if ($user) {
-            $user->favorites()->toggle($id);
-            //return response()->json('bravo');
-        } else {
-            return response()->json('devi essere registatro');
+        
+        public function locale($locale){
+            session()->put('locale', $locale);
+            return redirect()->back();
         }
-
+        
+        
     }
     
-}
