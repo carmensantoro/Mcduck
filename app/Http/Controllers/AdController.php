@@ -131,6 +131,12 @@ class AdController extends Controller
 
                 dispatch(new ResizeImage(
                     $newFileName,
+                    300,
+                    150
+                ));
+
+                dispatch(new ResizeImage(
+                    $newFileName,
                     400,
                     300
                 ));

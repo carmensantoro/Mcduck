@@ -17929,25 +17929,6 @@ header {
 
 /*CARD*/
 
-.card {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.card-header {
-  background: linear-gradient(to right, rgba(var(--first-color-rgb), 0.3), rgba(var(--second-color-rgb), 0.3));
-  border-top-left-radius: 20px !important;
-  border-top-right-radius: 20px !important;
-}
-
-.card-footer {
-  background: linear-gradient(to right, rgba(var(--first-color-rgb), 0.3), rgba(var(--second-color-rgb), 0.3));
-  border-bottom-left-radius: 20px !important;
-  border-bottom-right-radius: 20px !important;
-}
-
 .form-control {
   border: 1px solid rgba(var(--second-color-rgb), 0.7) !important;
 }
