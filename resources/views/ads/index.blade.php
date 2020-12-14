@@ -1,12 +1,12 @@
 <x-layout>
     
     <main>
-    <div class="container-home mt-5">
+    <div class="container-home rounded mt-5">
         <div class="row text-center">
             
             @foreach ($categories as $category)            
             <div class="col-6 col-md-4 col-lg-3">
-                <div class="my-3 card-category">
+                <div class="my-3 card-category rounded">
                     <div class="card-body font-weight-bold"> 
                         <a href="{{route('ads.index', compact('category'))}}">{{$category->name}}</a>
                     </div>

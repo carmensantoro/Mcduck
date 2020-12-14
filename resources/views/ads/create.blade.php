@@ -51,7 +51,7 @@
                 </div>
                 
                 <div class="form-group row">
-                    <label for="images" class="col-12 col-form-label text-md-right">Immagini</label>
+                    <label for="images" class="col-12 col-form-label font-weight-bold mt-3">Immagini</label>
                     <div class="col-12">
                         <div class="dropzone" id="drophere"></div>
                         @error('images')
@@ -59,12 +59,8 @@
                         @enderror
                     </div>
                 </div>
-                
-                <div class="form-group form-check custom-control custom-radio mt-3">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="exampleCheck1">
-                    <label class="form-check-label custom-control-label font-weight-bold" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-custom rounded-pill ml-auto">Inserisci</button>
+
+                <button type="submit" class="btn btn-custom rounded ml-auto">Inserisci</button>
             </form>
         </div>
     </div>
