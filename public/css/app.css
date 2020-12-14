@@ -18072,6 +18072,13 @@ footer {
   background-color: transparent !important;
 }
 
+.heart {
+  position: absolute;
+  top: 70%;
+  left: 90%;
+  z-index: 9;
+}
+
 .flag-icon-background,
 .flag-icon {
   background-size: contain;
