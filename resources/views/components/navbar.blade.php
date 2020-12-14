@@ -13,7 +13,7 @@
                 <a class="nav-link mx-md-3" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route('ads.index', ['category'=>'all'])}}">Tutti gli annunci</a>
+                <a class="nav-link" href="{{route('ads.index', ['category'=>'all'])}}">{{ __('ui.allAds') }}</a>
             </li>
             
             @auth
@@ -72,16 +72,19 @@
             </li> 
             
             <li class="nav-item dropdown">
-                <a class="flag-icon flag-icon-it" id="dropdownLocale" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  role="button">
-
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownLocale">
-                    <form class="dropdown-item" action="{{route('locale', 'it')}}" method="POST">
+                <form class="nav-link dropdown-item dropdown-toggle" action="{{route('locale', 'it')}}" method="POST" href="#" id="dropdownLocale" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @csrf
+                    <button type="submit" class="btn"><span class="flag-icon flag-icon-it"></span></button>
+                </form>
+                <div class="dropdown-menu dropdown-menu-right text-center" aria-labelledby="dropdownLocale">
+                    <form class="dropdown-item" action="{{route('locale', 'en')}}" method="POST">
                         @csrf
-                        <button type="submit" class="btn"> <span class="flag-icon flag-icon-it"></span></button>
+                        <button type="submit" class="btn"><span class="flag-icon flag-icon-gb"></span></button>
                     </form>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <form class="dropdown-item" action="{{route('locale', 'es')}}" method="POST">
+                        @csrf
+                        <button type="submit" class="btn"><span class="flag-icon flag-icon-es"></span></button>
+                    </form>
                 </div>
             </li>
         </ul>
