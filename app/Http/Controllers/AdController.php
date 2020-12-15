@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Models\Ad;
 use App\Models\AdImage;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreAd;
-use App\Jobs\ResizeImage;
 use Illuminate\Support\Facades\DB;
+use App\Jobs\GoogleVisionLabelImage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 
 class AdController extends Controller
 {
@@ -145,6 +147,9 @@ class AdController extends Controller
                 $i->ad_id = $a->id;
 
                 $i->save();
+
+                dispatch(new GoogleVisionSafeSearchImage($i->id));
+                dispatch(new GoogleVisionLabelImage($i->id));
             }
 
             File::deleteDirectory(storage_path("app/public/temp/{$uniqueSecret}"));

@@ -20,12 +20,26 @@
                             </div>
                             
                         </div>
-                        <div class="row mb-5 overflow-hidden">
+                        <div class="row mb-5">
                             @foreach ($ad->images as $image)
                             <div class="col-12 col-md-4 mt-5">
                                 <img class="d-block img-fluid mx-2" src="{{$image->getUrl(400, 300)}}" alt="">
+                                <ul>
+                                    <li>Adulti: {{$image->adult}}</li>
+                                    <li>Satira: {{$image->spoof}}</li>
+                                    <li>Medicina: {{$image->medical}}</li>
+                                    <li>Violenza: {{$image->violence}}</li>
+                                    <li>Razzismo: {{$image->racy}}</li>
+                                </ul>
+                                <h5>Labels</h5>
+                                <ul>
+                                    @if ($image->labels)
+                                        @foreach ($image->labels as $label)
+                                            <li>{{$label}}</li>
+                                        @endforeach
+                                    @endif
+                                </ul>
                             </div>
-                            
                             @endforeach
                             
                             

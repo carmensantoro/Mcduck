@@ -11,6 +11,10 @@ class AdImage extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'labels' => 'array'
+    ];
+
     public function ad()
     {
         return $this->belongsTo(Ad::class);
