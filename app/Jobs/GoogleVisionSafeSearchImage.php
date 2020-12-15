@@ -53,7 +53,7 @@ class GoogleVisionSafeSearchImage implements ShouldQueue
         $violence = $safe->getViolence();
         $racy = $safe->getRacy();
 
-        $likelihoodName = ['UNKNOWN', 'VERY_UNLIKELY', 'UNLIKELY', 'POSSIBLE', 'LIKELY', 'VERY_LIKELY'];
+        $likelihoodName = ['0', '20', '40', '60', '80', '100'];
 
         $i->adult = $likelihoodName[$adult];
         $i->medical = $likelihoodName[$medical];

@@ -25,18 +25,38 @@
                             <div class="col-12 col-md-4 mt-5">
                                 <img class="d-block img-fluid mx-2" src="{{$image->getUrl(400, 300)}}" alt="">
                                 <ul>
-                                    <li>Adulti: {{$image->adult}}</li>
-                                    <li>Satira: {{$image->spoof}}</li>
-                                    <li>Medicina: {{$image->medical}}</li>
-                                    <li>Violenza: {{$image->violence}}</li>
-                                    <li>Razzismo: {{$image->racy}}</li>
+                                    <li>Adulti: {{$image->adult}}
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: {{$image->adult}}%" aria-valuenow="{{$image->adult}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                    <li>Satira: {{$image->spoof}}
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: {{$image->spoof}}%" aria-valuenow="{{$image->spoof}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                    <li>Medicina: {{$image->medical}}
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: {{$image->medical}}%" aria-valuenow="{{$image->medical}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                    <li>Violenza: {{$image->violence}}
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: {{$image->violence}}%" aria-valuenow="{{$image->violence}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
+                                    <li>Razzismo: {{$image->racy}}
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: {{$image->racy}}%" aria-valuenow="{{$image->racy}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </li>
                                 </ul>
                                 <h5>Labels</h5>
                                 <ul>
                                     @if ($image->labels)
-                                        @foreach ($image->labels as $label)
-                                            <li>{{$label}}</li>
-                                        @endforeach
+                                    @foreach ($image->labels as $label)
+                                    <li>{{$label}}</li>
+                                    @endforeach
                                     @endif
                                 </ul>
                             </div>
