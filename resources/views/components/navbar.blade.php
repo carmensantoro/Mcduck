@@ -64,6 +64,7 @@
                         @csrf
                     </form>
                     <a class="dropdown-item" href="{{route('favorites.index')}}">Preferiti</a>
+                    <a class="dropdown-item" href="{{route('ads.personal')}}">Annunci personali</a>
                 </div>
             </li>
             @endguest

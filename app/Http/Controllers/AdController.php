@@ -132,7 +132,13 @@ class AdController extends Controller
         return view ('ads.search', compact('q', 'ads', 'sortby'));
     }
 
+    public function personalAds(){
+        $user = Auth::user();
 
+            $ads = $user->ads->where('is_accepted', true)->all();
+
+        return view('ads.personal', compact('ads'));
+    }
     
     /**
     * Show the form for creating a new resource.
@@ -273,9 +279,10 @@ class AdController extends Controller
         * @param  \App\Models\Ad  $ad
         * @return \Illuminate\Http\Response
         */
-        public function edit(Ad $ad)
+        public function edit(Request $request, Ad $ad)
         {
-            //
+            $uniqueSecret = $request-> old('uniqueSecret', base_convert(sha1(uniqid(mt_rand())), 16, 36));
+            return view('ads.edit', compact('uniqueSecret', 'ad'));
         }
         
         /**
@@ -287,7 +294,49 @@ class AdController extends Controller
         */
         public function update(Request $request, Ad $ad)
         {
-            //
+            $user=Auth::user();
+            $a = $ad->update(
+                [
+                    'title'=>$request->title,
+                    'body'=>$request->body,
+                    'price'=>$request->price,
+                    'category_id'=>$request->category_id
+                    ]
+                );
+                
+
+                $uniqueSecret = $request->input('uniqueSecret');
+                
+                $images = session()->get("images.{$uniqueSecret}", []);
+                $removedImages = session()->get("removedimages.{$uniqueSecret}", []);
+                
+                $images = array_diff($images, $removedImages);
+    
+                foreach ($images as $image) {
+                    $i = new AdImage();
+    
+                    $fileName = basename($image);
+                    $newFileName = "public/ad/{$ad->id}/{$fileName}";
+                    Storage::move($image, $newFileName);
+    
+    
+                    $i->file = $newFileName;
+                    $i->ad_id = $ad->id;
+    
+                    $i->save();
+    
+    
+                    GoogleVisionSafeSearchImage::withChain([
+                    new GoogleVisionLabelImage($i->id),
+                    new GoogleVisionRemoveFaces($i->id),
+                    new ResizeImage($i->file, 300, 150),
+                    new ResizeImage($i->file, 400, 300)
+                    ])->dispatch($i->id);
+                }
+    
+                File::deleteDirectory(storage_path("app/public/temp/{$uniqueSecret}"));
+    
+                return redirect(route('ads.show', compact('ad')))->with('message', 'Bene, il tuo annuncio è stato inserito');
         }
         
         /**
@@ -298,7 +347,13 @@ class AdController extends Controller
         */
         public function destroy(Ad $ad)
         {
-            //
+ 
+
+            $ad->images()->delete();
+            $ad->users()->detach();
+            $ad->delete();
+            
+            return redirect(route('ads.personal'));
         }
     }
     

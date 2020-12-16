@@ -33,7 +33,14 @@ Route::get('/ads/index/{category}', [AdController::class, 'index'])->name('ads.i
 Route::get('/ads/create', [AdController::class, 'create'])->name('ads.create');
 Route::post('/ads/store', [AdController::class, 'store'])->name('ads.store');
 // Dettaglio annuncio
-Route::get('/ads/{ad}', [AdController::class, 'show'])->name('ads.show');
+Route::get('/ads/show/{ad}', [AdController::class, 'show'])->name('ads.show');
+//Modifica annuncio
+Route::get('/ads/edit/{ad}', [AdController::class, 'edit'])->name('ads.edit');
+Route::put('/ads/update/{ad}', [AdController::class, 'update'])->name('ads.update');
+//Annunci personali
+Route::get('/ads/personal', [AdController::class, 'personalAds'])->name('ads.personal');
+//Elimina un annuncio
+Route::delete('/ads/delete/{ad}', [AdController::class, 'destroy'])->name('ads.delete');
 
 //Rotte immagini
 Route::post('/ads/images/upload', [AdController::class, 'uploadImage'])->name('ads.images.upload');
