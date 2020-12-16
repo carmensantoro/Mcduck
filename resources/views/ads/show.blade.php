@@ -3,7 +3,7 @@
     title='{{$ad->title}}'
     />
     <div class="container mt-5">
-        <div class="row">
+        <div class="row mx-auto">
             
             <div class="col-12 col-md-6 position-relative">
                 <div class="product-img-detail w-100">
