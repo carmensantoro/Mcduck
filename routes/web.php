@@ -57,6 +57,7 @@ Route::post('/revisor/request', [RequestRevisorController::class, 'request'])->n
 Route::get('/revisor/{email}/confirm', [RequestRevisorController::class, 'confirmRevisor'])->name('revisor.confirm');
 
 //Rotta per Preferiti
+Route::get('/user/favorites/index', [HomeController::class, 'indexFavorites'])->name('favorites.index');
 Route::get('/user/favorites/{id}', [HomeController::class, 'saveFavorites']);
 
 //Rotta per le lingue

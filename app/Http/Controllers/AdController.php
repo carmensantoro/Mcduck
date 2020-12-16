@@ -31,25 +31,74 @@ class AdController extends Controller
     *
     * @return \Illuminate\Http\Response
     */
-    public function index($category)
+    public function index($category, Request $request)
     {
-        
-        $category = Category::find($category);
+        $categoryid = $category;
+        $categories = Category::find($category);
         // $category = DB::table('categories')->where('name', $category)->get();
         // $categoryid = DB::table('categories')->where('id', $category)->get();
-        
-        if ($category != null) {
-            $ads = $category->ads()
-                    ->orderBy('created_at', 'desc')
-                    ->where('is_accepted', true)
-                    ->paginate(10);
+       
+        $sortby = $request->input('sortby');
+
+
+        if ($categories != null) {        
+            if ($sortby) {
+                switch ($sortby) {
+                    case '1':
+                        $ads = $categories->ads()->orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(10);
+                        break;
+                    case '2':
+                        $ads = $categories->ads()->orderBy('created_at', 'asc')->where('is_accepted', true)->paginate(10);
+                        break;  
+                    case '3':
+                        $ads = $categories->ads()->orderBy('price', 'desc')->where('is_accepted', true)->paginate(10);
+                        break; 
+                    case '4':
+                        $ads = $categories->ads()->orderBy('price', 'asc')->where('is_accepted', true)->paginate(10);
+                        break; 
+                        }
+                    }
+                    else {
+                        $ads = Ad::orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(10);
+                    }
         }
         else {
-            $ads=Ad::orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(10);
+            if ($sortby) {
+                switch ($sortby) {
+                    case '1':
+                        $ads = Ad::orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(10);
+                        break;
+                    case '2':
+                        $ads = Ad::orderBy('created_at', 'asc')->where('is_accepted', true)->paginate(10);
+                        break;  
+                    case '3':
+                        $ads = Ad::orderBy('price', 'desc')->where('is_accepted', true)->paginate(10);
+                        break; 
+                    case '4':
+                        $ads = Ad::orderBy('price', 'asc')->where('is_accepted', true)->paginate(10);
+                        break; 
+                        }
+                    }
+                    else {
+                        $ads = Ad::orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(10);
+                    }
+            }
+
+        
+
+        $adscount  =$ads->count();
+        
+        $user = Auth::user();
+        $favorite=collect([]);       
+        if ($user) {
+            $favorite = $user->favorites->pluck('pivot');
         }
         
-        return view('ads.index', compact('ads'));
+        
+        return view('ads.index', compact('ads', 'sortby', 'categoryid', 'adscount', 'favorite'));
     }
+
+
 
     public function search(Request $request) {
         $q = $request->input('q');

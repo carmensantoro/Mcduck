@@ -18088,6 +18088,13 @@ footer {
   z-index: 9;
 }
 
+.heart-ads {
+  position: absolute;
+  top: 5%;
+  left: 85%;
+  z-index: 9;
+}
+
 @media screen and (max-width: 767px) {
   .heart {
     position: absolute;
@@ -18095,6 +18102,38 @@ footer {
     left: 75%;
     z-index: 9;
   }
+
+  .heart-ads {
+    position: absolute;
+    top: 80%;
+    left: 5%;
+    z-index: 9;
+  }
+}
+
+.progress-20 {
+  background-color: #0bb10b;
+  width: 20%;
+}
+
+.progress-40 {
+  background-color: #98b91d;
+  width: 40%;
+}
+
+.progress-60 {
+  background-color: #c4c11d;
+  width: 60%;
+}
+
+.progress-80 {
+  background-color: #be8b1c;
+  width: 80%;
+}
+
+.progress-100 {
+  background-color: #b82a11;
+  width: 100%;
 }
 
 /*Pagination*/
