@@ -24,8 +24,8 @@
                             @foreach ($ad->images as $image)
                             <div class="col-12 col-md-4 mt-5">
                                 <img class="d-block img-fluid mx-2" src="{{$image->getUrl(400, 300)}}" alt="">
-                                <ul class="my-4">
-                                    <h5>Controllo contenuti</h5>
+                                <ul class="my-4 list-unstyled">
+                                    <h5 class="border-bottom mb-2 pb-2">Controllo contenuti</h5>
                                     <li>Adulti: {{$image->adult}}
                                         <div class="progress">
                                             <div class="progress-bar progress-{{$image->adult}}" role="progressbar" aria-valuenow="{{$image->adult}}" aria-valuemin="0" aria-valuemax="100"></div>
