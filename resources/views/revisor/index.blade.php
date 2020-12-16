@@ -51,14 +51,16 @@
                                         </div>
                                     </li>
                                 </ul>
-                                <h5>Labels</h5>
-                                <ul>
+                                <h6 class="border-bottom mb-2 pb-2">Keywords</h6>
+                                <div class="d-flex flex-wrap">
                                     @if ($image->labels)
                                     @foreach ($image->labels as $label)
-                                    <li>{{$label}}</li>
+                                    <span class="d-flex bg-second shadow rounded card-text w-fit m-1 text-center">
+                                        <small class="d-flex text-white px-2">{{$label}}</small>
+                                    </span>
                                     @endforeach
                                     @endif
-                                </ul>
+                                </div>
                             </div>
                             @endforeach
                             
