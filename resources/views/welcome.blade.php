@@ -17,7 +17,7 @@
                                 <div class="col-3 coin-search position-absolute">
                                     <img src="/media/icon-coin.png" alt="" class="img-fluid">
                                 </div>
-                                <div class="col-12 d-flex p-2 pl-5 input-search rounded shadow">
+                                <div class="col-12 d-flex p-2 pl-md-5 input-search rounded shadow">
                                     <input class="form-control form-control-lg rounded pr-5" id="text-input" type="text" name="q" placeholder="{{__('ui.search')}}">
                                     
                                     
