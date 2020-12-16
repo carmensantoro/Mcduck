@@ -18111,6 +18111,31 @@ footer {
   }
 }
 
+.progress-20 {
+  background-color: #0bb10b;
+  width: 20%;
+}
+
+.progress-40 {
+  background-color: #98b91d;
+  width: 40%;
+}
+
+.progress-60 {
+  background-color: #c4c11d;
+  width: 60%;
+}
+
+.progress-80 {
+  background-color: #be8b1c;
+  width: 80%;
+}
+
+.progress-100 {
+  background-color: #b82a11;
+  width: 100%;
+}
+
 /*Pagination*/
 
 .page-link {

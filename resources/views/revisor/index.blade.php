@@ -24,30 +24,31 @@
                             @foreach ($ad->images as $image)
                             <div class="col-12 col-md-4 mt-5">
                                 <img class="d-block img-fluid mx-2" src="{{$image->getUrl(400, 300)}}" alt="">
-                                <ul>
+                                <ul class="my-4">
+                                    <h5>Controllo contenuti</h5>
                                     <li>Adulti: {{$image->adult}}
                                         <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: {{$image->adult}}%" aria-valuenow="{{$image->adult}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar progress-{{$image->adult}}" role="progressbar" aria-valuenow="{{$image->adult}}" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </li>
                                     <li>Satira: {{$image->spoof}}
                                         <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: {{$image->spoof}}%" aria-valuenow="{{$image->spoof}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar progress-{{$image->spoof}}" role="progressbar" aria-valuenow="{{$image->spoof}}" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </li>
                                     <li>Medicina: {{$image->medical}}
                                         <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: {{$image->medical}}%" aria-valuenow="{{$image->medical}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar progress-{{$image->medical}}" role="progressbar" aria-valuenow="{{$image->medical}}" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </li>
                                     <li>Violenza: {{$image->violence}}
                                         <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: {{$image->violence}}%" aria-valuenow="{{$image->violence}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar progress-{{$image->violence}}" role="progressbar" aria-valuenow="{{$image->violence}}" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </li>
                                     <li>Razzismo: {{$image->racy}}
                                         <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: {{$image->racy}}%" aria-valuenow="{{$image->racy}}" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar progress-{{$image->racy}}" role="progressbar" aria-valuenow="{{$image->racy}}" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </li>
                                 </ul>
