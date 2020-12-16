@@ -38,13 +38,24 @@
         <div class="row">
             
             @foreach ($ads as $ad)
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 position-relative">
+                <div class="heart-ads"> 
+                    <button class="btn" onclick="favor({{$ad->id}})">
+                        
+                        @if (($favorite->firstWhere('ad_id', "$ad->id")))
+                        <i id="{{$ad->id}}" class="fas fa-heart text-first fa-2x"></i>
+                        @else
+                        <i id="{{$ad->id}}" class="far fa-heart text-first fa-2x"></i>
+                        @endif
+                        
+                    </button>
+                </div>
                 <a href="{{route('ads.show', compact('ad'))}}">
                     <div class="card mb-3 overflow-hidden">
                         <div class="row no-gutters">
                             <div class="col-md-4">
                                 @if(count($ad->images) > 0)
-                                <img src="{{$ad->images->first()->getUrl(400, 300)}}" class="card-img img-fluid" alt="..."> 
+                                <img src="{{$ad->images->first()->getUrl(400, 300)}}" class="card-img card-img-custom" alt="..."> 
                                 @endif
 
                             </div>

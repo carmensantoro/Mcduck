@@ -87,10 +87,15 @@ class AdController extends Controller
         
 
         $adscount  =$ads->count();
-
-
-        // return view('ads.index', compact('ads', 'sortby', 'adscount', 'categoryid'));
-        return view('ads.index', compact('ads', 'sortby', 'categoryid', 'adscount'));
+        
+        $user = Auth::user();
+        $favorite=collect([]);       
+        if ($user) {
+            $favorite = $user->favorites->pluck('pivot');
+        }
+        
+        
+        return view('ads.index', compact('ads', 'sortby', 'categoryid', 'adscount', 'favorite'));
     }
 
 

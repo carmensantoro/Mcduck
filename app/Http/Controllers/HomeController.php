@@ -53,6 +53,14 @@ class HomeController extends Controller
             }
             
         }
+
+        public function indexFavorites(){
+            $user = Auth::user();
+
+            $favorites = $user->favorites->sortDesc();
+
+            return view('favorites.index', compact('favorites'));
+        }
         
         public function locale($locale){
             session()->put('locale', $locale);
