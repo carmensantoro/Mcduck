@@ -43,6 +43,9 @@ class ResizeImage implements ShouldQueue
 
         Image::load($srcPath)
         ->crop(Manipulations::CROP_CENTER, $w, $h)
+        ->watermark(base_path('resources/img/mcduck-watermark.png'))
+        ->watermarkOpacity(50)
+        ->watermarkHeight(50, Manipulations::UNIT_PIXELS)
         ->save($destPath);
     }
 }

@@ -51,7 +51,7 @@
                 
             </div>
         </div>
-        
+
         {{-- Ultimi 5 annunci --}}
         <section class="bg-white pt-5">
             <div class="container">
