@@ -27,7 +27,7 @@
                         <div class="row no-gutters">
                             <div class="col-md-4">
                                 @if(count($ad->images) > 0)
-                                <img src="{{$ad->images->first()->getUrl(400, 300)}}" class="card-img img-fluid" alt="..."> 
+                                <img src="{{$ad->images->first()->getUrl(400, 300)}}" class="card-img card-img-custom" alt="..."> 
                                 @endif
 
                             </div>
