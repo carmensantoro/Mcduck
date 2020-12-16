@@ -345,10 +345,17 @@ class AdController extends Controller
         * @param  \App\Models\Ad  $ad
         * @return \Illuminate\Http\Response
         */
+        public function deleteImage(AdImage $image)
+        {
+ 
+            $image->delete();
+            
+            return redirect()->back();
+        }
+
         public function destroy(Ad $ad)
         {
  
-
             $ad->images()->delete();
             $ad->users()->detach();
             $ad->delete();

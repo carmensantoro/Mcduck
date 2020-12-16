@@ -9,7 +9,7 @@
             </div>
         </div>   
         <div class="row">
-            <form class="col-12" action="{{route('ads.update', compact('ad'))}}" method="POST">
+            <form class="col-12" action="{{route('ads.update', compact('ad'))}}" method="POST" id="EditForm">
                 @method('PUT')
                 @csrf
                 <input type="hidden" name="uniqueSecret" value="{{ $uniqueSecret }}">
@@ -65,8 +65,17 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-custom rounded ml-auto">Modifica</button>
+                <button type="submit" form="EditForm" class="btn btn-custom rounded ml-auto">Modifica</button>
             </form>
+            {{-- @foreach ($ad->images as $image)
+            <div class="col-12 col-md-4">
+            <form action="{{route('image.delete', compact('image'))}}" method="POST" id="img{{$image->id}}">
+                @method('DELETE')
+                @csrf
+                <button form="img{{$image->id}}" class="btn">Elimina</button>
+            </form>
+            </div>
+            @endforeach --}}
         </div>
     </div>
     

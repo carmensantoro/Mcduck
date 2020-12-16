@@ -46,6 +46,8 @@ Route::delete('/ads/delete/{ad}', [AdController::class, 'destroy'])->name('ads.d
 Route::post('/ads/images/upload', [AdController::class, 'uploadImage'])->name('ads.images.upload');
 Route::delete('/ads/images/remove', [AdController::class, 'removeImage'])->name('ads.images.remove');
 Route::get('/ad/images', [AdController::class, 'getImages'])->name('ad.images');
+//Cancelliamo le singole immagini dall'edit
+Route::delete('/image/delete/{image}', [AdController::class, 'deleteImage'])->name('image.delete');
 
 // Annunci filtrati per categoria
 // Route::get('ads/index/{category}', [AdController::class, 'index'])->name('adscategory.index');
