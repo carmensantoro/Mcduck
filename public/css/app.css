@@ -18088,6 +18088,17 @@ footer {
   }
 }
 
+/*Pagination*/
+
+.page-link {
+  color: var(--second-color);
+}
+
+.page-item.active .page-link {
+  background-color: var(--first-color);
+  border-color: var(--first-color);
+}
+
 .flag-icon-background,
 .flag-icon {
   background-size: contain;

@@ -286,7 +286,7 @@ footer {
             /* Chrome, Firefox, Opera, Safari 10.1+ */
             color: white;
             opacity: 0.8; /* Firefox */
-          }
+        }
     }
     .form-control:valid {
         background-color: transparent!important;
@@ -307,4 +307,14 @@ footer {
         left: 75%;
         z-index: 9;
     }
+}
+
+/*Pagination*/
+.page-link {
+    color: var(--second-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--first-color);
+    border-color: var(--first-color);
 }
