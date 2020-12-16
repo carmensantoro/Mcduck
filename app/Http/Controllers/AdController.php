@@ -47,8 +47,15 @@ class AdController extends Controller
         else {
             $ads=Ad::orderBy('created_at', 'desc')->where('is_accepted', true)->paginate(10);
         }
+
+        $user = Auth::user();
+        $favorite=collect([]);       
+        if ($user) {
+            $favorite = $user->favorites->pluck('pivot');
+        }
         
-        return view('ads.index', compact('ads'));
+        
+        return view('ads.index', compact('ads', 'favorite'));
     }
 
     public function search(Request $request) {
