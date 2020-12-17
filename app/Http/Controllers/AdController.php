@@ -347,10 +347,10 @@ class AdController extends Controller
         */
         public function deleteImage(AdImage $image)
         {
- 
+
             $image->delete();
-            
-            return redirect()->back();
+            return response()->json("$image");
+            //return redirect()->back();
         }
 
         public function destroy(Ad $ad)

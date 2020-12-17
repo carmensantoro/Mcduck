@@ -62,27 +62,38 @@
             </form>
             <div class="form-group row w-100">
                 @foreach ($ad->images as $image)
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-4" id="id{{$image->id}}">
                     <img class="d-block img-fluid my-2 mx-auto" src="{{$image->getUrl(300, 150)}}" alt="">
                     
                     
                     
-                    <form action="{{route('image.delete', compact('image'))}}" method="POST" id="img{{$image->id}}">
+                    {{-- <form action="{{route('image.delete', compact('image'))}}" method="POST" id="img{{$image->id}}">
                         @method('DELETE')
                         @csrf
                         <button form="img{{$image->id}}" class="btn">Elimina</button>
-                    </form>
+                    </form> --}}
                     
-                    
+                    <button onclick="deleteImg({{$image->id}})">Elimina</button>
                 </div>
                 @endforeach
             </div>
             <div class="row w-100">
                 <div class="col-12 text-right">
-                
-                <button type="submit" form="EditForm" class="btn btn-custom rounded ml-auto">Modifica</button>   
-            </div></div>
+                    
+                    <button type="submit" form="EditForm" class="btn btn-custom rounded ml-auto">Modifica</button>   
+                </div></div>
+            </div>
         </div>
-    </div>
-    
-</x-layout>
+        {{-- <script>
+            function deleteImg($image){
+                axios.delete(`/image/delete/${$image}`)
+                .then(function (response) {
+                    document.getElementById(`id${$image}`).classList.add('d-none');
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            } 
+        </script> --}}
+    </x-layout>

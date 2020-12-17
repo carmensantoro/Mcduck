@@ -39,10 +39,24 @@ window.favor = function ($id) {
 let navbar = document.querySelector('#navbar')
 
 if (window.innerWidth > 576) {
-    document.addEventListener('scroll', () => {
-        if (window.pageYOffset > 20) {
-            navbar.classList.add('shadow')
-        } else {
-            navbar.classList.remove('shadow')
-        }
-      })}
+  document.addEventListener('scroll', () => {
+    if (window.pageYOffset > 20) {
+      navbar.classList.add('shadow')
+    } else {
+      navbar.classList.remove('shadow')
+    }
+  }
+  )
+}
+
+//Per cancellare le foto nell'edit
+window.deleteImg = function ($image) {
+  axios.delete(`/image/delete/${$image}`)
+    .then(function (response) {
+      document.getElementById(`id${$image}`).classList.add('d-none');
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+} 
