@@ -52,11 +52,6 @@
                 </div>
                 <div class="form-group row">
                     <label for="images" class="col-12 col-form-label font-weight-bold mt-3">Immagini</label>
-                    @foreach ($ad->images as $image)
-                    <div class="col-12 col-md-4">
-                        <img class="d-block img-fluid m-2" src="{{$image->getUrl(300, 150)}}" alt="">
-                    </div>
-                    @endforeach
                     <div class="col-12 mt-4">
                         <div class="dropzone" id="drophere"></div>
                         @error('images')
@@ -64,18 +59,29 @@
                         @enderror
                     </div>
                 </div>
-
-                <button type="submit" form="EditForm" class="btn btn-custom rounded ml-auto">Modifica</button>
             </form>
-            {{-- @foreach ($ad->images as $image)
-            <div class="col-12 col-md-4">
-            <form action="{{route('image.delete', compact('image'))}}" method="POST" id="img{{$image->id}}">
-                @method('DELETE')
-                @csrf
-                <button form="img{{$image->id}}" class="btn">Elimina</button>
-            </form>
+            <div class="form-group row w-100">
+                @foreach ($ad->images as $image)
+                <div class="col-12 col-md-4">
+                    <img class="d-block img-fluid my-2 mx-auto" src="{{$image->getUrl(300, 150)}}" alt="">
+                    
+                    
+                    
+                    <form action="{{route('image.delete', compact('image'))}}" method="POST" id="img{{$image->id}}">
+                        @method('DELETE')
+                        @csrf
+                        <button form="img{{$image->id}}" class="btn">Elimina</button>
+                    </form>
+                    
+                    
+                </div>
+                @endforeach
             </div>
-            @endforeach --}}
+            <div class="row w-100">
+                <div class="col-12 text-right">
+                
+                <button type="submit" form="EditForm" class="btn btn-custom rounded ml-auto">Modifica</button>   
+            </div></div>
         </div>
     </div>
     

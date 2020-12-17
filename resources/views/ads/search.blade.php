@@ -54,7 +54,7 @@
                         <div class="card mb-3 overflow-hidden">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="https://via.placeholder.com/300x300.png" class="card-img img-fluid" alt="...">
+                                    <img src="{{$ad->images->first()->getUrl(400, 300)}}" class="card-img card-img-custom" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
