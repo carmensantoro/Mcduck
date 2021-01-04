@@ -7,8 +7,10 @@ Mcduck è stato creato durante il code bootcamp di [Aulab](https://aulab.it), ch
 Abbiamo utilizzato: <br>
 - HTML
 - CSS
+- [Bootstrap 4](https://getbootstrap.com)
 - Javascript
-- Laravel
+- [Laravel 8](https://laravel.com)
+- [Google Vision](https://cloud.google.com/vision/?hl=it)
 
 ----
 
